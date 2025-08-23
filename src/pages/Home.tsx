@@ -41,17 +41,17 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-in-up" style={{ animationDelay: '0.4s' }}>
               <Button 
                 size="lg" 
-                className="btn-hero glass-strong bg-gradient-primary text-primary-foreground border-0 px-8 py-6 text-lg font-semibold transition-elastic"
+                className="btn-hero glass-strong bg-gradient-primary text-primary-foreground border-0 px-8 py-6 text-lg font-semibold transition-elastic group w-full sm:w-auto"
               >
                 Explore Assets
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               
-              <Link to="/about">
+              <Link to="/about" className="w-full sm:w-auto">
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="glass border-primary/30 text-foreground hover:bg-primary/20 px-8 py-6 text-lg transition-elastic hover:scale-105"
+                  className="glass border-primary/30 text-foreground hover:bg-primary/20 px-8 py-6 text-lg transition-elastic hover:scale-105 w-full"
                 >
                   Learn More
                 </Button>

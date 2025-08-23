@@ -93,24 +93,30 @@ export function Navigation() {
 
         {/* Mobile Navigation */}
         {isMobileOpen && (
-          <div className="md:hidden mt-4 pb-4 animate-slide-in-up">
-            <div className="flex flex-col space-y-4">
-              {navItems.map((item) => {
-                const isActive = location.pathname === item.path;
-                return (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    className={`text-sm font-medium transition-smooth ${
-                      isActive
-                        ? 'text-primary'
-                        : 'text-muted-foreground hover:text-foreground'
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                );
-              })}
+          <div className="md:hidden">
+            <div className="glass-strong mt-4 p-4 rounded-xl border border-primary/20 animate-slide-in-up backdrop-blur-xl">
+              <div className="flex flex-col space-y-4">
+                {navItems.map((item, index) => {
+                  const isActive = location.pathname === item.path;
+                  return (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      className={`text-sm font-medium transition-elastic hover:scale-105 relative p-3 rounded-lg ${
+                        isActive
+                          ? 'text-primary bg-primary/10 glass'
+                          : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
+                      }`}
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      <span className="animate-fade-in">{item.name}</span>
+                      {isActive && (
+                        <div className="absolute inset-0 bg-gradient-primary opacity-10 rounded-lg animate-shimmer"></div>
+                      )}
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
           </div>
         )}

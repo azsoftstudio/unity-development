@@ -326,11 +326,21 @@
     transform: translateY(0) scale(0.98);
   }
 
-  /* Mobile-specific optimizations */
+  /* Mobile-specific optimizations for responsive design */
   @media (max-width: 768px) {
     .hero-bg {
       min-height: 100vh;
       padding-top: 80px;
+    }
+    
+    .hero-bg h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+    }
+    
+    .hero-bg p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
     }
     
     .glass {
@@ -343,12 +353,47 @@
       -webkit-backdrop-filter: blur(25px);
     }
     
-    .animate-glow {
-      animation-duration: 2s;
+    /* Better spacing for mobile */
+    .max-w-4xl {
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
     
-    .interactive-glow:hover {
-      transform: translateY(-2px) scale(1.01);
+    /* Mobile card adjustments */
+    .grid.md\\:grid-cols-3 {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    /* Mobile button adjustments */
+    .flex.flex-col.sm\\:flex-row {
+      gap: 1rem;
+    }
+    
+    .flex.flex-col.sm\\:flex-row .btn-hero,
+    .flex.flex-col.sm\\:flex-row button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  /* Large desktop optimizations */
+  @media (min-width: 1200px) {
+    .hero-bg h1 {
+      font-size: 5rem;
+      line-height: 1.1;
+    }
+    
+    .hero-bg p {
+      font-size: 1.5rem;
+    }
+    
+    .max-w-4xl {
+      max-width: 80rem;
+    }
+    
+    .grid.md\\:grid-cols-3 {
+      gap: 2.5rem;
     }
   }
 
@@ -366,6 +411,13 @@
     
     .btn-hero:hover::before {
       left: 0;
+    }
+    
+    /* Better touch targets */
+    .mobile-nav a {
+      min-height: 48px;
+      display: flex;
+      align-items: center;
     }
   }
 }
