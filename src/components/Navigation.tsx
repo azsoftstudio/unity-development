@@ -39,12 +39,12 @@ export function Navigation() {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center space-x-2 transition-smooth hover:scale-105"
+            className="flex items-center space-x-2 transition-elastic hover:scale-105 group"
           >
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center transition-transform group-hover:rotate-6">
               <span className="text-white font-bold text-sm">AZ</span>
             </div>
-            <span className="text-xl font-bold text-foreground">
+            <span className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
               AZSoftStudio
             </span>
           </Link>
@@ -57,13 +57,16 @@ export function Navigation() {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`text-sm font-medium transition-smooth ${
+                  className={`text-sm font-medium transition-elastic hover:scale-110 relative ${
                     isActive
                       ? 'text-primary'
                       : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
                   {item.name}
+                  {isActive && (
+                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-primary rounded-full animate-shimmer"></div>
+                  )}
                 </Link>
               );
             })}
