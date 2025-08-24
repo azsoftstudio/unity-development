@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
+import { memo } from 'react';
 
-export function Footer() {
+export const Footer = memo(() => {
   return (
     <footer className="glass mt-20 border-t border-border/20">
       <div className="max-w-7xl mx-auto px-6 py-8">
@@ -29,4 +30,6 @@ export function Footer() {
       </div>
     </footer>
   );
-}
+});
+
+Footer.displayName = 'Footer';

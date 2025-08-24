@@ -1,9 +1,9 @@
 import { useLocation, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, memo, useCallback } from "react";
 import { Home, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const NotFound = () => {
+const NotFound = memo(() => {
   const location = useLocation();
 
   useEffect(() => {
@@ -12,6 +12,10 @@ const NotFound = () => {
       location.pathname
     );
   }, [location.pathname]);
+
+  const handleGoBack = useCallback(() => {
+    window.history.back();
+  }, []);
 
   return (
     <div className="min-h-screen flex items-center justify-center px-6">
@@ -40,7 +44,7 @@ const NotFound = () => {
             <Button
               variant="outline"
               className="glass border-primary/30 text-foreground hover:bg-primary/10 transition-smooth w-full sm:w-auto"
-              onClick={() => window.history.back()}
+              onClick={handleGoBack}
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               Go Back
@@ -50,6 +54,8 @@ const NotFound = () => {
       </div>
     </div>
   );
-};
+});
+
+NotFound.displayName = 'NotFound';
 
 export default NotFound;

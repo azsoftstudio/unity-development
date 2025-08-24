@@ -1,9 +1,11 @@
 import { ArrowRight, Code, Zap, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { memo, useMemo } from 'react';
+import { OptimizedFeatureCard } from '@/components/OptimizedFeatureCard';
 
-export default function Home() {
-  const features = [
+const Home = memo(() => {
+  const features = useMemo(() => [
     {
       icon: <Code className="h-6 w-6" />,
       title: "Developer-First",
@@ -19,7 +21,7 @@ export default function Home() {
       title: "Production Ready",
       description: "Battle-tested assets used in shipped games. Reliable, performant, and well-documented."
     }
-  ];
+  ], []);
 
   return (
     <div className="min-h-screen">
@@ -60,12 +62,11 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Subtle Floating Elements */}
+        {/* Optimized Floating Elements - reduced for performance */}
         <div className="absolute top-20 left-10 w-16 h-16 glass rounded-full animate-float opacity-30" />
         <div className="absolute bottom-32 right-20 w-12 h-12 glass rounded-full animate-subtle-pulse opacity-25" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 right-10 w-10 h-10 glass rounded-full animate-float opacity-20" style={{ animationDelay: '4s' }} />
         
-        {/* Subtle Background Orbs */}
+        {/* Optimized Background Orbs */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-gradient-primary rounded-full blur-3xl opacity-5 animate-subtle-pulse" />
           <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-primary rounded-full blur-3xl opacity-3 animate-subtle-pulse" style={{ animationDelay: '3s' }} />
@@ -75,32 +76,24 @@ export default function Home() {
       {/* Features Section */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <header className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Why Choose AZSoftStudio?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We understand the challenges of Unity development and build solutions that actually make your life easier.
             </p>
-          </div>
+          </header>
 
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div 
+              <OptimizedFeatureCard
                 key={feature.title}
-                className="glass p-8 rounded-xl transition-smooth interactive-hover animate-gentle-slide-in group"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 text-white transition-transform group-hover:scale-105">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+                index={index}
+              />
             ))}
           </div>
         </div>
@@ -128,4 +121,8 @@ export default function Home() {
       </section>
     </div>
   );
-}
+});
+
+Home.displayName = 'Home';
+
+export default Home;
