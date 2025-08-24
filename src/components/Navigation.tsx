@@ -92,34 +92,44 @@ export function Navigation() {
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileOpen && (
-          <div className="md:hidden">
-            <div className="glass-strong mt-4 p-4 rounded-xl border border-primary/10 animate-fade-in backdrop-blur-xl">
-              <div className="flex flex-col space-y-2">
-                {navItems.map((item, index) => {
-                  const isActive = location.pathname === item.path;
-                  return (
-                    <Link
-                      key={item.name}
-                      to={item.path}
-                      className={`text-sm font-medium transition-smooth relative p-3 rounded-lg ${
-                        isActive
-                          ? 'text-primary bg-primary/5 glass'
-                          : 'text-muted-foreground hover:text-foreground hover:bg-accent/30'
-                      }`}
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    >
-                      <span className="animate-fade-in">{item.name}</span>
-                      {isActive && (
-                        <div className="absolute inset-0 bg-primary/5 rounded-lg"></div>
-                      )}
-                    </Link>
-                  );
-                })}
-              </div>
+        <div 
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
+            isMobileOpen 
+              ? 'max-h-96 opacity-100 translate-y-0' 
+              : 'max-h-0 opacity-0 -translate-y-4'
+          }`}
+        >
+          <div className="glass-strong mt-4 p-6 rounded-2xl border border-primary/10 backdrop-blur-xl shadow-2xl">
+            <div className="flex flex-col space-y-1">
+              {navItems.map((item, index) => {
+                const isActive = location.pathname === item.path;
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className={`text-sm font-medium transition-all duration-200 relative p-4 rounded-xl group ${
+                      isActive
+                        ? 'text-primary bg-primary/8 glass shadow-sm'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-accent/20'
+                    }`}
+                    style={{ 
+                      animationDelay: `${index * 0.1}s`,
+                      transform: isMobileOpen ? 'translateY(0)' : 'translateY(-8px)',
+                      transition: `all 0.3s ease-out ${index * 0.1}s`
+                    }}
+                  >
+                    <span className="relative z-10 group-hover:translate-x-1 transition-transform duration-200">
+                      {item.name}
+                    </span>
+                    {isActive && (
+                      <div className="absolute inset-0 bg-primary/5 rounded-xl animate-gentle-glow"></div>
+                    )}
+                  </Link>
+                );
+              })}
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
