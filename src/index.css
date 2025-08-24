@@ -37,10 +37,10 @@
     
     --radius: 1rem;
     
-    /* Glassmorphism Variables - Light Mode */
-    --glass-bg: 240 10% 98% / 0.7;
-    --glass-border: 240 10% 90% / 0.3;
-    --glass-shadow: 240 10% 15% / 0.1;
+  /* Glassmorphism Variables - Light Mode */
+  --glass-bg: 240 10% 98% / 0.8;
+  --glass-border: 240 6% 85% / 0.2;
+  --glass-shadow: 240 5% 15% / 0.08;
     
     /* Gradients - Light Mode */
     --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(195 100% 70%));
@@ -83,9 +83,9 @@
     --ring: 217 91% 60%;
     
     /* Glassmorphism Variables - Dark Mode */
-    --glass-bg: 240 10% 10% / 0.6;
-    --glass-border: 217 91% 60% / 0.2;
-    --glass-shadow: 0 0% 0% / 0.3;
+    --glass-bg: 240 10% 8% / 0.7;
+    --glass-border: 240 10% 25% / 0.15;
+    --glass-shadow: 0 0% 0% / 0.2;
     
     /* Gradients - Dark Mode */
     --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(279 100% 60%));
@@ -110,21 +110,27 @@
     min-height: 100vh;
   }
   
-  /* Glassmorphism Base Classes */
+  /* Glassmorphism Base Classes - Apple Style */
   .glass {
     background: hsl(var(--glass-bg));
     border: 1px solid hsl(var(--glass-border));
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 8px 32px hsl(var(--glass-shadow));
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    box-shadow: 
+      0 1px 1px hsl(var(--glass-shadow)),
+      0 4px 16px hsl(var(--glass-shadow)),
+      inset 0 1px 0 hsl(240 10% 100% / 0.1);
   }
   
   .glass-strong {
     background: hsl(var(--glass-bg));
     border: 1px solid hsl(var(--glass-border));
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px);
-    box-shadow: 0 12px 40px hsl(var(--glass-shadow));
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    box-shadow: 
+      0 2px 4px hsl(var(--glass-shadow)),
+      0 8px 24px hsl(var(--glass-shadow)),
+      inset 0 1px 0 hsl(240 10% 100% / 0.15);
   }
   
   /* Hero Gradient Background */
@@ -148,127 +154,92 @@
     animation: float 6s ease-in-out infinite;
   }
   
-  /* Animations - Enhanced for Snappy & Impressive Effects */
+  /* iOS-Style Subtle Animations */
   @keyframes float {
     0%, 100% { 
-      transform: translateY(0px) rotate(0deg) scale(1); 
+      transform: translateY(0px); 
+      opacity: 0.4;
+    }
+    50% { 
+      transform: translateY(-8px); 
       opacity: 0.6;
-    }
-    33% { 
-      transform: translateY(-15px) rotate(2deg) scale(1.1); 
-      opacity: 0.8;
-    }
-    66% { 
-      transform: translateY(-5px) rotate(-1deg) scale(0.95); 
-      opacity: 0.7;
     }
   }
   
-  @keyframes glow {
-    0%, 100% { 
-      box-shadow: var(--glow-primary), 0 0 40px hsl(var(--primary) / 0.2); 
-      transform: scale(1);
+  @keyframes gentleGlow {
+    from {
+      box-shadow: 
+        0 1px 1px hsl(var(--glass-shadow)),
+        0 4px 16px hsl(var(--glass-shadow));
     }
-    50% { 
-      box-shadow: var(--glow-accent), 0 0 60px hsl(var(--accent) / 0.4); 
-      transform: scale(1.05);
+    to {
+      box-shadow: 
+        0 1px 1px hsl(var(--glass-shadow)),
+        0 4px 16px hsl(var(--glass-shadow)),
+        0 0 32px hsl(var(--primary) / 0.15);
     }
   }
   
   @keyframes slideInUp {
     from {
       opacity: 0;
-      transform: translateY(60px) scale(0.9);
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
-      transform: translateY(0) scale(1);
+      transform: translateY(0);
     }
   }
   
   @keyframes fadeIn {
     from { 
       opacity: 0; 
-      transform: scale(0.95) translateY(20px);
+      transform: translateY(8px);
     }
     to { 
       opacity: 1; 
-      transform: scale(1) translateY(0);
+      transform: translateY(0);
     }
   }
 
-  @keyframes pulse {
+  @keyframes subtlePulse {
     0%, 100% {
-      transform: scale(1);
-      opacity: 1;
+      opacity: 0.3;
     }
     50% {
-      transform: scale(1.05);
-      opacity: 0.8;
+      opacity: 0.5;
     }
   }
 
-  @keyframes bounceIn {
-    0% {
-      opacity: 0;
-      transform: scale(0.3) translateY(30px);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.1) translateY(-10px);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-  }
-
-  @keyframes shimmer {
-    0% {
-      background-position: -200% 0;
-    }
-    100% {
-      background-position: 200% 0;
-    }
-  }
-
-  @keyframes rotate {
+  @keyframes gentleSlideIn {
     from {
-      transform: rotate(0deg);
+      opacity: 0;
+      transform: translateY(12px);
     }
     to {
-      transform: rotate(360deg);
+      opacity: 1;
+      transform: translateY(0);
     }
   }
   
   .animate-slide-in-up {
-    animation: slideInUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation: slideInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
   
   .animate-fade-in {
-    animation: fadeIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation: fadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
   
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite;
+  .animate-gentle-glow {
+    animation: gentleGlow 2s ease-in-out infinite alternate;
   }
 
-  .animate-pulse-slow {
-    animation: pulse 3s ease-in-out infinite;
+  .animate-subtle-pulse {
+    animation: subtlePulse 4s ease-in-out infinite;
   }
 
-  .animate-bounce-in {
-    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-  }
-
-  .animate-shimmer {
-    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.1), transparent);
-    background-size: 200% 100%;
-    animation: shimmer 2s infinite;
-  }
-
-  .animate-rotate {
-    animation: rotate 20s linear infinite;
+  .animate-gentle-slide-in {
+    animation: gentleSlideIn 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
   
   /* Smooth Transitions - Enhanced */
@@ -284,46 +255,27 @@
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   
-  /* Interactive Elements - Enhanced */
-  .interactive-glow:hover {
-    box-shadow: var(--glow-primary), 0 0 30px hsl(var(--primary) / 0.3);
-    transform: translateY(-4px) scale(1.02);
-  }
-  
-  .dark .interactive-glow:hover {
-    box-shadow: var(--glow-primary), 0 0 40px hsl(var(--primary) / 0.4);
+  /* Interactive Elements - iOS Style */
+  .interactive-hover:hover {
+    transform: translateY(-1px);
+    box-shadow: 
+      0 2px 4px hsl(var(--glass-shadow)),
+      0 8px 24px hsl(var(--glass-shadow)),
+      0 0 24px hsl(var(--primary) / 0.1);
   }
 
-  /* Button Enhancements */
-  .btn-hero {
+  /* Professional Button Styling */
+  .btn-professional {
     position: relative;
-    overflow: hidden;
-    transform-style: preserve-3d;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .btn-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s;
+  .btn-professional:hover {
+    transform: translateY(-1px);
   }
 
-  .btn-hero:hover::before {
-    left: 100%;
-  }
-
-  .btn-hero:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1), var(--glow-primary);
-  }
-
-  .btn-hero:active {
-    transform: translateY(0) scale(0.98);
+  .btn-professional:active {
+    transform: translateY(0);
   }
 
   /* Mobile-specific optimizations for responsive design */
