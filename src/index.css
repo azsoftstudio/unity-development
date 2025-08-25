@@ -385,6 +385,18 @@
       0 8px 24px hsl(var(--glass-shadow)),
       0 0 24px hsl(var(--primary) / 0.1);
   }
+  
+  .interactive-glow {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .interactive-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 4px 8px hsl(var(--glass-shadow)),
+      0 12px 32px hsl(var(--glass-shadow)),
+      0 0 32px hsl(var(--primary) / 0.2);
+  }
 
   /* Professional Button Styling */
   .btn-professional {
