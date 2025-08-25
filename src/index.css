@@ -110,29 +110,132 @@
     min-height: 100vh;
   }
   
-  /* Glassmorphism Base Classes - Apple Style */
+  /* True Frosted Glass Effect with Refraction */
   .glass {
-    background: hsl(var(--glass-bg));
+    background: linear-gradient(135deg, 
+      hsl(var(--glass-bg)) 0%, 
+      hsl(240 10% 100% / 0.05) 25%,
+      hsl(var(--glass-bg)) 50%,
+      hsl(240 10% 100% / 0.08) 75%,
+      hsl(var(--glass-bg)) 100%
+    );
     border: 1px solid hsl(var(--glass-border));
-    backdrop-filter: blur(24px) saturate(200%) brightness(110%);
-    -webkit-backdrop-filter: blur(24px) saturate(200%) brightness(110%);
+    backdrop-filter: 
+      blur(28px) 
+      saturate(180%) 
+      brightness(108%) 
+      contrast(102%) 
+      hue-rotate(2deg);
+    -webkit-backdrop-filter: 
+      blur(28px) 
+      saturate(180%) 
+      brightness(108%) 
+      contrast(102%) 
+      hue-rotate(2deg);
     box-shadow: 
+      /* Outer light scattering */
+      0 0 0 1px hsl(240 10% 100% / 0.15),
       0 2px 8px hsl(var(--glass-shadow)),
       0 8px 32px hsl(var(--glass-shadow)),
-      inset 0 1px 0 hsl(240 10% 100% / 0.2),
-      inset 0 -1px 0 hsl(240 10% 0% / 0.1);
+      0 16px 64px hsl(240 10% 0% / 0.06),
+      /* Inner highlights - light refraction */
+      inset 0 1px 0 hsl(240 10% 100% / 0.3),
+      inset 1px 0 0 hsl(240 10% 100% / 0.15),
+      inset -1px 0 0 hsl(240 10% 100% / 0.1),
+      inset 0 -1px 0 hsl(240 10% 0% / 0.12);
+    position: relative;
+  }
+  
+  .glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+      transparent 0%, 
+      hsl(240 10% 100% / 0.03) 25%,
+      transparent 50%,
+      hsl(240 10% 100% / 0.05) 75%,
+      transparent 100%
+    );
+    border-radius: inherit;
+    pointer-events: none;
   }
   
   .glass-strong {
-    background: hsl(var(--glass-bg));
+    background: linear-gradient(135deg, 
+      hsl(var(--glass-bg)) 0%, 
+      hsl(240 10% 100% / 0.08) 20%,
+      hsl(var(--glass-bg)) 40%,
+      hsl(240 10% 100% / 0.12) 60%,
+      hsl(var(--glass-bg)) 80%,
+      hsl(240 10% 100% / 0.06) 100%
+    );
     border: 1px solid hsl(var(--glass-border));
-    backdrop-filter: blur(40px) saturate(220%) brightness(115%);
-    -webkit-backdrop-filter: blur(40px) saturate(220%) brightness(115%);
+    backdrop-filter: 
+      blur(48px) 
+      saturate(200%) 
+      brightness(112%) 
+      contrast(105%) 
+      hue-rotate(3deg);
+    -webkit-backdrop-filter: 
+      blur(48px) 
+      saturate(200%) 
+      brightness(112%) 
+      contrast(105%) 
+      hue-rotate(3deg);
     box-shadow: 
+      /* Enhanced outer light scattering */
+      0 0 0 1px hsl(240 10% 100% / 0.25),
       0 4px 12px hsl(var(--glass-shadow)),
       0 16px 48px hsl(var(--glass-shadow)),
-      inset 0 2px 0 hsl(240 10% 100% / 0.25),
-      inset 0 -2px 0 hsl(240 10% 0% / 0.15);
+      0 32px 96px hsl(240 10% 0% / 0.08),
+      /* Enhanced inner highlights - stronger refraction */
+      inset 0 2px 0 hsl(240 10% 100% / 0.4),
+      inset 2px 0 0 hsl(240 10% 100% / 0.2),
+      inset -2px 0 0 hsl(240 10% 100% / 0.15),
+      inset 0 -2px 0 hsl(240 10% 0% / 0.15),
+      /* Light caustics effect */
+      inset 0 0 20px hsl(240 10% 100% / 0.05);
+    position: relative;
+  }
+  
+  .glass-strong::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+      transparent 0%, 
+      hsl(240 10% 100% / 0.06) 20%,
+      transparent 40%,
+      hsl(240 10% 100% / 0.08) 60%,
+      transparent 80%,
+      hsl(240 10% 100% / 0.04) 100%
+    );
+    border-radius: inherit;
+    pointer-events: none;
+  }
+  
+  .glass-strong::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    background: linear-gradient(135deg, 
+      hsl(240 10% 100% / 0.08) 0%, 
+      transparent 25%,
+      transparent 75%,
+      hsl(240 10% 100% / 0.04) 100%
+    );
+    border-radius: inherit;
+    pointer-events: none;
   }
   
   /* Hero Gradient Background */
