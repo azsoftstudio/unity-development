@@ -16,16 +16,19 @@ type NavItem = (typeof navItems)[number];
 const NavigationItem = memo<{ item: NavItem; isActive: boolean }>(({ item, isActive }) => (
   <Link
     to={item.path}
-    className={`text-sm font-medium transition-elastic hover:scale-110 relative ${
+    className={`text-sm font-medium transition-all duration-200 hover:scale-110 relative px-4 py-2 rounded-lg group ${
       isActive
-        ? 'text-primary'
-        : 'text-muted-foreground hover:text-foreground'
+        ? 'text-primary bg-primary/8 glass shadow-sm'
+        : 'text-muted-foreground hover:text-foreground hover:bg-accent/20'
     }`}
   >
-    {item.name}
+    <span className="relative z-10 group-hover:translate-y-[-1px] transition-transform duration-200">
+      {item.name}
+    </span>
     {isActive && (
-      <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-primary rounded-full animate-shimmer"></div>
+      <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-primary rounded-full animate-shimmer"></div>
     )}
+    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg"></div>
   </Link>
 ));
 
@@ -102,7 +105,21 @@ export const Navigation = memo(() => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-10">
+            {navItems.map((item) => (
+              <NavigationItem
+                key={item.name}
+                item={item}
+                isActive={location.pathname === item.path}
+              />
+            ))}
+            <div className="ml-4 pl-4 border-l border-border/30">
+              <ThemeToggle />
+            </div>
+          </div>
+
+          {/* Tablet Navigation */}
+          <div className="hidden md:flex lg:hidden items-center space-x-6">
             {navItems.map((item) => (
               <NavigationItem
                 key={item.name}
