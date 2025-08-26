@@ -30,31 +30,9 @@ const Home = memo(() => {
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <div className="animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-              <span className="inline-block animate-letter-shimmer">
-                {"AZSoft".split("").map((letter, index) => (
-                  <span
-                    key={index}
-                    className="title-letter inline-block"
-                    style={{
-                      animationDelay: `${index * 0.1}s`
-                    }}
-                  >
-                    {letter}
-                  </span>
-                ))}
-              </span>
-              <span className="bg-gradient-primary bg-clip-text text-transparent inline-block">
-                {"Studio".split("").map((letter, index) => (
-                  <span
-                    key={index}
-                    className="title-letter inline-block"
-                    style={{
-                      animationDelay: `${(index + 6) * 0.1}s`
-                    }}
-                  >
-                    {letter}
-                  </span>
-                ))}
+              AZSoft
+              <span className="bg-gradient-primary bg-clip-text text-transparent">
+                Studio
               </span>
             </h1>
             
