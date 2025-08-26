@@ -1,10 +1,17 @@
 import { ArrowRight, Code, Zap, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { memo, useMemo } from 'react';
+import { memo, useMemo, useEffect, useState } from 'react';
 import { OptimizedFeatureCard } from '@/components/OptimizedFeatureCard';
 
 const Home = memo(() => {
+  const [animateTitle, setAnimateTitle] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setAnimateTitle(true), 300);
+    return () => clearTimeout(timer);
+  }, []);
+
   const features = useMemo(() => [
     {
       icon: <Code className="h-6 w-6" />,
@@ -29,10 +36,34 @@ const Home = memo(() => {
       <section className="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-              AZSoft
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Studio
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight hero-text-breathe">
+              <span className="hero-text-glow">
+                {'AZSoft'.split('').map((char, index) => (
+                  <span
+                    key={index}
+                    className={`hero-text-reveal ${animateTitle ? '' : 'opacity-0'}`}
+                    style={{ 
+                      animationDelay: `${index * 0.1}s`,
+                      color: 'hsl(var(--foreground))'
+                    }}
+                  >
+                    {char}
+                  </span>
+                ))}
+              </span>
+              <br />
+              <span className="hero-text-shimmer bg-gradient-primary bg-clip-text text-transparent">
+                {'Studio'.split('').map((char, index) => (
+                  <span
+                    key={index}
+                    className={`hero-text-reveal ${animateTitle ? '' : 'opacity-0'}`}
+                    style={{ 
+                      animationDelay: `${(index + 6) * 0.1}s`
+                    }}
+                  >
+                    {char}
+                  </span>
+                ))}
               </span>
             </h1>
             
