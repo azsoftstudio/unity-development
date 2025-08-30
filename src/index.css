@@ -327,6 +327,42 @@
     }
   }
 
+  @keyframes colorCycle {
+    0% {
+      background: linear-gradient(135deg, hsl(217 91% 60%), hsl(195 100% 70%));
+    }
+    25% {
+      background: linear-gradient(135deg, hsl(279 100% 60%), hsl(217 91% 60%));
+    }
+    50% {
+      background: linear-gradient(135deg, hsl(195 100% 60%), hsl(279 100% 60%));
+    }
+    75% {
+      background: linear-gradient(135deg, hsl(217 91% 60%), hsl(195 100% 70%));
+    }
+    100% {
+      background: linear-gradient(135deg, hsl(217 91% 60%), hsl(195 100% 70%));
+    }
+  }
+
+  @keyframes colorCycleDark {
+    0% {
+      background: linear-gradient(135deg, hsl(217 91% 60%), hsl(279 100% 60%));
+    }
+    25% {
+      background: linear-gradient(135deg, hsl(195 100% 60%), hsl(217 91% 60%));
+    }
+    50% {
+      background: linear-gradient(135deg, hsl(279 100% 60%), hsl(195 100% 60%));
+    }
+    75% {
+      background: linear-gradient(135deg, hsl(217 91% 60%), hsl(279 100% 60%));
+    }
+    100% {
+      background: linear-gradient(135deg, hsl(217 91% 60%), hsl(279 100% 60%));
+    }
+  }
+
   @keyframes mobileMenuSlide {
     from {
       opacity: 0;
@@ -362,6 +398,17 @@
 
   .animate-mobile-menu {
     animation: mobileMenuSlide 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .animate-color-cycle {
+    animation: colorCycle 4s ease-in-out infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .dark .animate-color-cycle {
+    animation: colorCycleDark 4s ease-in-out infinite;
   }
   
   /* Smooth Transitions - Enhanced */

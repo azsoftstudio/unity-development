@@ -31,7 +31,7 @@ const Home = memo(() => {
           <div className="animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
               AZSoft
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <span className="animate-color-cycle">
                 Studio
               </span>
             </h1>
