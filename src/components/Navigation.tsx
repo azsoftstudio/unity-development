@@ -2,6 +2,7 @@ import { useState, useEffect, memo, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
+import { Logo } from './Logo';
 import { Button } from '@/components/ui/button';
 import { useScrolled } from '@/hooks/useScrolled';
 
@@ -92,17 +93,7 @@ export const Navigation = memo(() => {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link
-            to="/"
-            className="flex items-center space-x-2 transition-elastic hover:scale-105 group"
-          >
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center transition-transform group-hover:rotate-6">
-              <span className="text-white font-bold text-sm">AZ</span>
-            </div>
-            <span className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-              AZSoftStudio
-            </span>
-          </Link>
+          <Logo size="md" shape="rounded" showText={true} />
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-10">

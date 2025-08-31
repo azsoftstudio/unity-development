@@ -1,6 +1,7 @@
 import { ArrowRight, Code, Zap, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/Logo';
 import { memo, useMemo } from 'react';
 import { OptimizedFeatureCard } from '@/components/OptimizedFeatureCard';
 
@@ -28,7 +29,8 @@ const Home = memo(() => {
       {/* Hero Section */}
       <section className="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <div className="animate-fade-in">
+          <div className="animate-fade-in flex flex-col items-center">
+            <Logo size="xl" shape="rounded" showText={false} variant="hero" className="mb-8" />
             <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
               AZSoft
               <span className="animate-text-color-cycle">
