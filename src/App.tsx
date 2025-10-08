@@ -44,7 +44,7 @@ const App = memo(() => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <BrowserRouter basename="/unity-development" future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <div className="min-h-screen">
             <Navigation />
             <Suspense fallback={<PageLoader />}>
