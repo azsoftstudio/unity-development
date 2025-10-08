@@ -43,13 +43,15 @@ const Home = memo(() => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
-              <Button 
-                size="lg" 
-                className="btn-professional glass-strong bg-gradient-primary text-primary-foreground border-0 px-8 py-6 text-lg font-semibold group w-full sm:w-auto"
-              >
-                Explore Assets
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
+              <a href="https://assetstore.unity.com/publishers/102095" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <Button 
+                  size="lg" 
+                  className="btn-professional glass-strong bg-gradient-primary text-primary-foreground border-0 px-8 py-6 text-lg font-semibold group w-full sm:w-auto"
+                >
+                  Explore Assets
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </a>
               
               <Link to="/about" className="w-full sm:w-auto">
                 <Button 
@@ -111,13 +113,15 @@ const Home = memo(() => {
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Join thousands of Unity developers who trust AZSoftStudio tools to ship better games faster.
             </p>
-            <Button 
-              size="lg" 
-              className="btn-professional glass-strong bg-gradient-primary text-primary-foreground border-0 px-8 py-6 text-lg font-semibold group"
-            >
-              Browse Asset Store
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Button>
+            <a href="https://assetstore.unity.com/publishers/102095" target="_blank" rel="noopener noreferrer">
+              <Button 
+                size="lg" 
+                className="btn-professional glass-strong bg-gradient-primary text-primary-foreground border-0 px-8 py-6 text-lg font-semibold group"
+              >
+                Browse Asset Store
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </a>
           </div>
         </div>
       </section>
