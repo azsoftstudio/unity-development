@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import { Link } from 'react-router-dom';
+import logoImage from '@/assets/azsoft-logo.png';
 
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -41,7 +42,7 @@ export const Logo = memo<LogoProps>(({
   const renderLogoContent = () => (
     <>
       <img 
-        src="/lovable-uploads/d1493c99-3be3-4238-8896-6b619c550aac.png"
+        src={logoImage}
         alt="AZSoft Studio Logo"
         className={logoImageClasses}
         onError={(e) => {
