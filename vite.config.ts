@@ -18,5 +18,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/unity-development/' // Replace with your GitHub repo name
+  base: mode === 'production' ? '/unity-development/' : '/'
 }));
