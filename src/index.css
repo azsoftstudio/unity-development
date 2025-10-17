@@ -44,8 +44,8 @@
     
     /* Gradients - Light Mode */
     --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(195 100% 70%));
-    --gradient-secondary: linear-gradient(135deg, hsl(240 10% 98%), hsl(240 5% 94%));
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 85%), hsl(195 100% 90%));
+    --gradient-secondary: linear-gradient(135deg, hsl(240 5% 96%), hsl(217 91% 92%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 88%), hsl(195 100% 92%));
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -89,8 +89,8 @@
     
     /* Gradients - Dark Mode */
     --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(279 100% 60%));
-    --gradient-secondary: linear-gradient(135deg, hsl(240 10% 12%), hsl(240 10% 8%));
-    --gradient-hero: linear-gradient(135deg, hsl(240 10% 8%), hsl(217 91% 15%));
+    --gradient-secondary: linear-gradient(135deg, hsl(240 10% 10%), hsl(217 91% 12%));
+    --gradient-hero: linear-gradient(135deg, hsl(240 10% 10%), hsl(217 91% 15%));
     
     /* Neon Glows - Dark Mode */
     --glow-primary: 0 0 20px hsl(217 91% 60% / 0.3);
@@ -110,198 +110,35 @@
     min-height: 100vh;
   }
   
-  /* Enhanced Liquid Glass Effect with Fluid Refraction */
+  /* Optimized Glass Effect - Performance Focused */
   .glass {
-    background: linear-gradient(135deg, 
-      hsl(var(--glass-bg)) 0%, 
-      hsl(217 91% 60% / 0.08) 15%,
-      hsl(var(--glass-bg)) 30%,
-      hsl(195 100% 60% / 0.06) 50%,
-      hsl(var(--glass-bg)) 70%,
-      hsl(279 100% 60% / 0.05) 85%,
-      hsl(var(--glass-bg)) 100%
-    );
+    background: hsl(var(--glass-bg));
     border: 1px solid hsl(var(--glass-border));
-    backdrop-filter: 
-      blur(36px) 
-      saturate(100%) 
-      brightness(102%) 
-      contrast(100%);
-    -webkit-backdrop-filter: 
-      blur(36px) 
-      saturate(100%) 
-      brightness(102%) 
-      contrast(100%);
+    backdrop-filter: blur(12px) saturate(100%);
+    -webkit-backdrop-filter: blur(12px) saturate(100%);
     box-shadow: 
-      /* Multi-layer outer light diffusion */
-      0 0 0 1px hsl(217 91% 60% / 0.15),
-      0 0 0 2px hsl(240 10% 100% / 0.1),
-      0 2px 12px hsl(var(--glass-shadow)),
-      0 8px 40px hsl(var(--glass-shadow)),
-      0 20px 80px hsl(240 10% 0% / 0.08),
-      /* Chromatic aberration effect */
-      0 1px 2px hsl(217 91% 60% / 0.04),
-      0 1px 2px hsl(195 100% 60% / 0.03),
-      /* Enhanced inner highlights - fluid refraction */
-      inset 0 2px 1px hsl(240 10% 100% / 0.4),
-      inset 2px 0 1px hsl(217 91% 60% / 0.15),
-      inset -2px 0 1px hsl(195 100% 60% / 0.12),
-      inset 0 -2px 1px hsl(240 10% 0% / 0.15),
-      /* Liquid caustics */
-      inset 0 0 30px hsl(217 91% 60% / 0.04);
+      0 2px 8px hsl(var(--glass-shadow)),
+      0 8px 24px hsl(var(--glass-shadow)),
+      inset 0 1px 0 hsl(240 10% 100% / 0.2);
     position: relative;
-    overflow: hidden;
-  }
-  
-  .glass::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-      135deg, 
-      transparent 0%, 
-      hsl(217 91% 60% / 0.03) 20%,
-      transparent 35%,
-      hsl(195 100% 60% / 0.02) 50%,
-      transparent 65%,
-      hsl(279 100% 60% / 0.02) 80%,
-      transparent 100%
-    );
-    border-radius: inherit;
-    pointer-events: none;
-  }
-  
-  .glass::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 40%;
-    background: linear-gradient(180deg, 
-      hsl(240 10% 100% / 0.12) 0%, 
-      transparent 100%
-    );
-    border-radius: inherit;
-    pointer-events: none;
   }
   
   .glass-strong {
-    background: linear-gradient(135deg, 
-      hsl(var(--glass-bg)) 0%, 
-      hsl(217 91% 60% / 0.12) 12%,
-      hsl(var(--glass-bg)) 25%,
-      hsl(195 100% 60% / 0.1) 40%,
-      hsl(var(--glass-bg)) 55%,
-      hsl(279 100% 60% / 0.08) 70%,
-      hsl(var(--glass-bg)) 85%,
-      hsl(217 91% 60% / 0.06) 100%
-    );
+    background: hsl(var(--glass-bg));
     border: 1px solid hsl(var(--glass-border));
-    backdrop-filter: 
-      blur(64px) 
-      saturate(105%) 
-      brightness(104%) 
-      contrast(100%);
-    -webkit-backdrop-filter: 
-      blur(64px) 
-      saturate(105%) 
-      brightness(104%) 
-      contrast(100%);
+    backdrop-filter: blur(20px) saturate(105%);
+    -webkit-backdrop-filter: blur(20px) saturate(105%);
     box-shadow: 
-      /* Multi-spectrum light diffusion */
-      0 0 0 1px hsl(217 91% 60% / 0.25),
-      0 0 0 2px hsl(240 10% 100% / 0.15),
-      0 4px 16px hsl(var(--glass-shadow)),
-      0 12px 48px hsl(var(--glass-shadow)),
-      0 24px 80px hsl(240 10% 0% / 0.1),
-      0 40px 120px hsl(217 91% 60% / 0.08),
-      /* Prismatic chromatic aberration */
-      0 2px 4px hsl(217 91% 60% / 0.05),
-      0 2px 4px hsl(195 100% 60% / 0.04),
-      0 2px 4px hsl(279 100% 60% / 0.03),
-      /* Intense inner highlights - liquid refraction */
-      inset 0 3px 2px hsl(240 10% 100% / 0.5),
-      inset 3px 0 2px hsl(217 91% 60% / 0.25),
-      inset -3px 0 2px hsl(195 100% 60% / 0.2),
-      inset 0 -3px 2px hsl(240 10% 0% / 0.2),
-      /* Fluid caustics effect */
-      inset 0 0 40px hsl(217 91% 60% / 0.08),
-      inset 0 0 60px hsl(195 100% 60% / 0.05);
+      0 4px 12px hsl(var(--glass-shadow)),
+      0 12px 32px hsl(var(--glass-shadow)),
+      inset 0 1px 0 hsl(240 10% 100% / 0.3);
     position: relative;
-    overflow: hidden;
   }
   
-  .glass-strong::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: 
-      radial-gradient(circle at 30% 30%, hsl(217 91% 60% / 0.04) 0%, transparent 40%),
-      radial-gradient(circle at 70% 70%, hsl(195 100% 60% / 0.03) 0%, transparent 40%),
-      linear-gradient(
-        135deg, 
-        transparent 0%, 
-        hsl(217 91% 60% / 0.03) 15%,
-        transparent 30%,
-        hsl(195 100% 60% / 0.02) 45%,
-        transparent 60%,
-        hsl(279 100% 60% / 0.02) 75%,
-        transparent 90%
-      );
-    border-radius: inherit;
-    pointer-events: none;
-  }
-  
-  .glass-strong::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      linear-gradient(135deg, 
-        hsl(240 10% 100% / 0.08) 0%, 
-        transparent 20%
-      ),
-      linear-gradient(-45deg,
-        transparent 80%,
-        hsl(217 91% 60% / 0.04) 100%
-      ),
-      radial-gradient(ellipse at top, 
-        hsl(240 10% 100% / 0.04) 0%, 
-        transparent 50%
-      );
-    border-radius: inherit;
-    pointer-events: none;
-  }
-  
-  /* Hero Gradient Background */
+  /* Hero Gradient Background - Optimized */
   .hero-bg {
     background: var(--gradient-hero);
     position: relative;
-    overflow: hidden;
-  }
-  
-  .hero-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      radial-gradient(circle at 20% 50%, hsl(217 91% 60% / 0.2) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, hsl(195 100% 60% / 0.2) 0%, transparent 50%),
-      radial-gradient(circle at 40% 80%, hsl(279 100% 60% / 0.1) 0%, transparent 50%);
-    animation: float 6s ease-in-out infinite;
   }
   
   /* Liquid Glass Animations */
