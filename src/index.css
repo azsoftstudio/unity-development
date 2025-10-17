@@ -124,16 +124,16 @@
     border: 1px solid hsl(var(--glass-border));
     backdrop-filter: 
       blur(36px) 
-      saturate(220%) 
-      brightness(115%) 
-      contrast(108%) 
-      hue-rotate(3deg);
+      saturate(140%) 
+      brightness(108%) 
+      contrast(105%) 
+      hue-rotate(1deg);
     -webkit-backdrop-filter: 
       blur(36px) 
-      saturate(220%) 
-      brightness(115%) 
-      contrast(108%) 
-      hue-rotate(3deg);
+      saturate(140%) 
+      brightness(108%) 
+      contrast(105%) 
+      hue-rotate(1deg);
     box-shadow: 
       /* Multi-layer outer light diffusion */
       0 0 0 1px hsl(217 91% 60% / 0.15),
@@ -206,16 +206,16 @@
     border: 1px solid hsl(var(--glass-border));
     backdrop-filter: 
       blur(64px) 
-      saturate(250%) 
-      brightness(118%) 
-      contrast(110%) 
-      hue-rotate(5deg);
+      saturate(160%) 
+      brightness(110%) 
+      contrast(106%) 
+      hue-rotate(2deg);
     -webkit-backdrop-filter: 
       blur(64px) 
-      saturate(250%) 
-      brightness(118%) 
-      contrast(110%) 
-      hue-rotate(5deg);
+      saturate(160%) 
+      brightness(110%) 
+      contrast(106%) 
+      hue-rotate(2deg);
     box-shadow: 
       /* Multi-spectrum light diffusion */
       0 0 0 1px hsl(217 91% 60% / 0.25),
