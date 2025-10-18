@@ -63,9 +63,41 @@ export default {
 				'gradient-hero': 'var(--gradient-hero)'
 			},
 			boxShadow: {
+				'xs': 'var(--shadow-xs)',
+				'sm': 'var(--shadow-sm)',
+				'md': 'var(--shadow-md)',
+				'lg': 'var(--shadow-lg)',
+				'xl': 'var(--shadow-xl)',
+				'2xl': 'var(--shadow-2xl)',
+				'inner': 'var(--shadow-inner)',
 				'glow-primary': 'var(--glow-primary)',
 				'glow-accent': 'var(--glow-accent)',
-				'glow-purple': 'var(--glow-purple)'
+				'glow-purple': 'var(--glow-purple)',
+				'depth-1': 'var(--shadow-sm)',
+				'depth-2': 'var(--shadow-md)',
+				'depth-3': 'var(--shadow-lg)',
+				'depth-4': 'var(--shadow-xl)',
+				'primary': 'var(--shadow-primary)',
+				'accent': 'var(--shadow-accent)'
+			},
+			letterSpacing: {
+				tighter: '-0.05em',
+				tight: '-0.025em',
+				normal: '0',
+				wide: '0.025em',
+				wider: '0.05em',
+				widest: '0.1em'
+			},
+			fontWeight: {
+				thin: '100',
+				extralight: '200',
+				light: '300',
+				normal: '400',
+				medium: '500',
+				semibold: '600',
+				bold: '700',
+				extrabold: '800',
+				black: '900'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -31,14 +31,14 @@ const Home = memo(() => {
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <div className="animate-fade-in flex flex-col items-center">
             <Logo size="xl" shape="rounded" showText={false} variant="hero" className="mb-8" />
-            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-              AZSoft
-              <span className="animate-text-color-cycle">
+            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
+              <span className="text-foreground">AZSoft</span>
+              <span className="text-gradient-hero">
                 Studio
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed tracking-wide font-light animate-fade-in" style={{ animationDelay: '0.3s' }}>
               Crafting Time-Saving Unity Tools for Smarter Development
             </p>
             
@@ -81,10 +81,10 @@ const Home = memo(() => {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <header className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Why Choose AZSoftStudio?
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
+              Why Choose <span className="text-gradient">AZSoftStudio</span>?
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-normal tracking-wide">
               We understand the challenges of Unity development and build solutions that actually make your life easier.
             </p>
           </header>
@@ -106,11 +106,11 @@ const Home = memo(() => {
       {/* CTA Section */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="glass-strong p-12 rounded-2xl animate-gentle-slide-in transition-smooth interactive-hover group">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Ready to Accelerate Your Development?
+          <div className="glass-strong p-12 rounded-2xl animate-gentle-slide-in transition-smooth shadow-depth-3 hover:shadow-depth-4 group">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
+              Ready to Accelerate Your <span className="text-gradient">Development</span>?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto font-light tracking-wide">
               Join thousands of Unity developers who trust AZSoftStudio tools to ship better games faster.
             </p>
             <a href="https://assetstore.unity.com/publishers/102095" target="_blank" rel="noopener noreferrer">
