@@ -42,9 +42,7 @@ export default {
 				},
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))',
-					warm: 'hsl(var(--accent-warm))',
-					'warm-foreground': 'hsl(var(--accent-warm-foreground))'
+					foreground: 'hsl(var(--accent-foreground))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -57,15 +55,12 @@ export default {
 			},
 			fontFamily: {
 				sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-				display: ['Space Grotesk', 'Inter', 'sans-serif'],
 				mono: ['JetBrains Mono', 'Fira Code', 'monospace']
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-secondary': 'var(--gradient-secondary)',
-				'gradient-hero': 'var(--gradient-hero)',
-				'gradient-warm': 'var(--gradient-warm)',
-				'gradient-hero-text': 'var(--gradient-hero-text)'
+				'gradient-hero': 'var(--gradient-hero)'
 			},
 			boxShadow: {
 				'xs': 'var(--shadow-xs)',

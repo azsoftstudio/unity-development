@@ -31,8 +31,8 @@ const Home = memo(() => {
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <div className="animate-fade-in flex flex-col items-center">
             <Logo size="xl" shape="rounded" showText={false} variant="hero" className="mb-8" />
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight font-display">
-              <span className="text-foreground font-light">AZSoft</span>
+            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
+              <span className="text-foreground">AZSoft</span>
               <span className="text-gradient-hero">
                 Studio
               </span>
@@ -46,7 +46,7 @@ const Home = memo(() => {
               <a href="https://assetstore.unity.com/publishers/102095" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button 
                   size="lg" 
-                  className="btn-professional glass-strong bg-gradient-warm text-accent-warm-foreground border-0 px-8 py-6 text-lg font-bold group w-full sm:w-auto shadow-depth-3 hover:shadow-depth-4"
+                  className="btn-professional glass-strong bg-gradient-primary text-primary-foreground border-0 px-8 py-6 text-lg font-semibold group w-full sm:w-auto"
                 >
                   Explore Assets
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -78,13 +78,13 @@ const Home = memo(() => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-6 pattern-dots">
+      <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <header className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight font-display">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
               Why Choose <span className="text-gradient">AZSoftStudio</span>?
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-normal tracking-wide">
               We understand the challenges of Unity development and build solutions that actually make your life easier.
             </p>
           </header>
@@ -104,19 +104,19 @@ const Home = memo(() => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 pattern-diagonal">
+      <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="glass-strong p-12 rounded-2xl animate-gentle-slide-in transition-smooth shadow-depth-3 hover:shadow-depth-4 group">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight font-display">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
               Ready to Accelerate Your <span className="text-gradient">Development</span>?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto font-light tracking-wide">
               Join thousands of Unity developers who trust AZSoftStudio tools to ship better games faster.
             </p>
             <a href="https://assetstore.unity.com/publishers/102095" target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
-                className="btn-professional glass-strong bg-gradient-warm text-accent-warm-foreground border-0 px-8 py-6 text-lg font-bold group shadow-depth-3 hover:shadow-depth-4"
+                className="btn-professional glass-strong bg-gradient-primary text-primary-foreground border-0 px-8 py-6 text-lg font-semibold group"
               >
                 Browse Asset Store
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
