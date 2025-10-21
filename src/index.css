@@ -42,10 +42,13 @@
   --glass-border: 240 6% 85% / 0.3;
   --glass-shadow: 240 5% 15% / 0.12;
     
-    /* Gradients - Light Mode */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(195 100% 70%));
+    /* Gradients - Light Mode - Multi-tone stunning gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 85% 64%), hsl(195 92% 67%), hsl(240 70% 75%));
     --gradient-secondary: linear-gradient(135deg, hsl(240 5% 96%), hsl(217 91% 92%));
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 88%), hsl(195 100% 92%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 85% 92%) 0%, hsl(200 90% 94%) 25%, hsl(240 70% 96%) 50%, hsl(195 85% 94%) 75%, hsl(217 80% 92%) 100%);
+    --gradient-mesh: radial-gradient(at 20% 30%, hsl(217 85% 90%) 0px, transparent 50%), 
+                     radial-gradient(at 80% 70%, hsl(195 85% 92%) 0px, transparent 50%),
+                     radial-gradient(at 40% 80%, hsl(240 70% 94%) 0px, transparent 50%);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -105,10 +108,13 @@
     --glass-border: 240 10% 25% / 0.4;
     --glass-shadow: 0 0% 0% / 0.3;
     
-    /* Gradients - Dark Mode */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(279 100% 60%));
+    /* Gradients - Dark Mode - Multi-tone stunning gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 85% 55%), hsl(279 90% 58%), hsl(195 85% 60%));
     --gradient-secondary: linear-gradient(135deg, hsl(240 10% 10%), hsl(217 91% 12%));
-    --gradient-hero: linear-gradient(135deg, hsl(240 10% 10%), hsl(217 91% 15%));
+    --gradient-hero: linear-gradient(135deg, hsl(240 15% 8%) 0%, hsl(217 70% 12%) 25%, hsl(279 60% 10%) 50%, hsl(195 65% 12%) 75%, hsl(240 15% 8%) 100%);
+    --gradient-mesh: radial-gradient(at 20% 30%, hsl(217 85% 15%) 0px, transparent 50%), 
+                     radial-gradient(at 80% 70%, hsl(279 80% 12%) 0px, transparent 50%),
+                     radial-gradient(at 40% 80%, hsl(195 75% 14%) 0px, transparent 50%);
     
     /* Neon Glows - Dark Mode */
     --glow-primary: 0 0 20px hsl(217 91% 60% / 0.3);
@@ -161,10 +167,34 @@
     position: relative;
   }
   
-  /* Hero Gradient Background - Optimized */
+  /* Hero Gradient Background - Stunning animated multi-layer */
   .hero-bg {
     background: var(--gradient-hero);
     position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-mesh);
+    opacity: 0.6;
+    animation: meshMove 20s ease-in-out infinite;
+    will-change: transform;
+  }
+  
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      repeating-linear-gradient(0deg, transparent 0px, hsl(var(--foreground) / 0.02) 1px, transparent 2px),
+      repeating-linear-gradient(90deg, transparent 0px, hsl(var(--foreground) / 0.02) 1px, transparent 2px);
+    background-size: 60px 60px;
+    opacity: 0.3;
+    animation: subtleFloat 30s linear infinite;
+    will-change: transform;
   }
   
   /* Liquid Glass Animations */
@@ -295,6 +325,27 @@
     }
     100% {
       color: hsl(217 91% 70%);
+    }
+  }
+
+  @keyframes meshMove {
+    0%, 100% {
+      transform: translate(0%, 0%) scale(1);
+    }
+    33% {
+      transform: translate(5%, -5%) scale(1.1);
+    }
+    66% {
+      transform: translate(-5%, 5%) scale(0.95);
+    }
+  }
+
+  @keyframes subtleFloat {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(60px, 60px);
     }
   }
 
