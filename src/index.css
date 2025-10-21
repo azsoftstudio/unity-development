@@ -42,10 +42,10 @@
   --glass-border: 240 6% 85% / 0.3;
   --glass-shadow: 240 5% 15% / 0.12;
     
-    /* Gradients - Light Mode */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(195 100% 70%));
-    --gradient-secondary: linear-gradient(135deg, hsl(240 5% 96%), hsl(217 91% 92%));
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 88%), hsl(195 100% 92%));
+    /* Gradients - Light Mode - Multi-tone, desaturated */
+    --gradient-primary: linear-gradient(135deg, hsl(217 65% 55%), hsl(195 70% 60%), hsl(240 60% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(240 5% 96%), hsl(217 40% 90%), hsl(195 35% 92%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 50% 85%), hsl(195 55% 88%), hsl(240 45% 90%));
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -105,15 +105,16 @@
     --glass-border: 240 10% 25% / 0.4;
     --glass-shadow: 0 0% 0% / 0.3;
     
-    /* Gradients - Dark Mode */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(279 100% 60%));
-    --gradient-secondary: linear-gradient(135deg, hsl(240 10% 10%), hsl(217 91% 12%));
-    --gradient-hero: linear-gradient(135deg, hsl(240 10% 10%), hsl(217 91% 15%));
+    /* Gradients - Dark Mode - Multi-tone, desaturated */
+    --gradient-primary: linear-gradient(135deg, hsl(217 60% 55%), hsl(195 65% 58%), hsl(279 55% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(240 10% 10%), hsl(217 45% 12%), hsl(195 40% 14%));
+    --gradient-hero: linear-gradient(135deg, hsl(240 10% 10%), hsl(217 50% 15%), hsl(195 45% 17%));
     
-    /* Neon Glows - Dark Mode */
-    --glow-primary: 0 0 20px hsl(217 91% 60% / 0.3);
-    --glow-accent: 0 0 20px hsl(195 100% 60% / 0.3);
-    --glow-purple: 0 0 20px hsl(279 100% 60% / 0.3);
+    /* Neon Glows - Dark Mode - Subtle */
+    --glow-primary: 0 0 20px hsl(217 60% 55% / 0.25);
+    --glow-accent: 0 0 20px hsl(195 65% 58% / 0.25);
+    --glow-purple: 0 0 20px hsl(279 55% 60% / 0.25);
+    --glow-logo: 0 4px 20px hsl(217 60% 55% / 0.4), 0 0 40px hsl(195 65% 58% / 0.2);
     
     /* Dark Mode Shadows - adjusted for visibility */
     --shadow-primary: 0 10px 30px -10px hsl(217 91% 60% / 0.6);
@@ -298,6 +299,20 @@
     }
   }
 
+  @keyframes shineSwipe {
+    0% {
+      transform: translateX(-100%) translateY(-100%) rotate(30deg);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%) translateY(100%) rotate(30deg);
+      opacity: 0;
+    }
+  }
+
   @keyframes mobileMenuSlide {
     from {
       opacity: 0;
@@ -347,6 +362,55 @@
 
   .dark .animate-text-color-cycle {
     animation: textColorCycleDark 4s ease-in-out infinite;
+  }
+
+  /* Logo shine effect - GPU accelerated */
+  .logo-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .logo-shine::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsla(0, 0%, 100%, 0.3) 50%,
+      transparent 100%
+    );
+    transform: translateX(-100%) translateY(-100%) rotate(30deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .logo-shine:hover::before {
+    animation: shineSwipe 1.2s ease-out;
+  }
+
+  /* Hero logo glow - Performant drop shadow */
+  .hero-logo-glow {
+    filter: drop-shadow(0 4px 12px hsl(217 60% 55% / 0.3)) 
+            drop-shadow(0 0 24px hsl(195 65% 58% / 0.2));
+    transition: filter 0.3s ease;
+  }
+
+  .dark .hero-logo-glow {
+    filter: drop-shadow(var(--glow-logo));
+  }
+
+  .hero-logo-glow:hover {
+    filter: drop-shadow(0 6px 16px hsl(217 60% 55% / 0.4)) 
+            drop-shadow(0 0 32px hsl(195 65% 58% / 0.3));
+  }
+
+  .dark .hero-logo-glow:hover {
+    filter: drop-shadow(0 6px 16px hsl(217 60% 55% / 0.5)) 
+            drop-shadow(0 0 40px hsl(195 65% 58% / 0.35));
   }
   
   /* Smooth Transitions - Enhanced */

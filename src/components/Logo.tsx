@@ -76,7 +76,7 @@ export const Logo = memo<LogoProps>(({
 
   if (variant === 'hero') {
     return (
-      <div className={`flex items-center transition-elastic hover:scale-105 group ${className}`}>
+      <div className={`flex items-center transition-elastic hover:scale-105 group logo-shine hero-logo-glow ${className}`}>
         {renderLogoContent()}
       </div>
     );
