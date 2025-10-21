@@ -47,14 +47,16 @@ const App = memo(() => (
         <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <div className="min-h-screen">
             <Navigation />
-            <Suspense fallback={<PageLoader />}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Suspense>
+            <main id="main-content">
+              <Suspense fallback={<PageLoader />}>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
+            </main>
             <Footer />
           </div>
         </HashRouter>

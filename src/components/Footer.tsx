@@ -18,13 +18,18 @@ export const Footer = memo(() => {
           <div className="flex items-center space-x-6">
             <Link
               to="/contact"
-              className="text-sm text-muted-foreground hover:text-foreground transition-smooth"
+              className="text-sm text-muted-foreground hover:text-foreground transition-smooth focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded"
             >
               Contact
             </Link>
-            <button className="text-sm text-muted-foreground hover:text-foreground transition-smooth">
-              Privacy Policy
-            </button>
+            <a
+              href="https://assetstore.unity.com/publishers/102095"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground hover:text-foreground transition-smooth focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded"
+            >
+              Asset Store
+            </a>
           </div>
         </div>
       </div>
