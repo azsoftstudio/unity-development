@@ -50,14 +50,6 @@
                      radial-gradient(at 80% 70%, hsl(195 85% 92%) 0px, transparent 50%),
                      radial-gradient(at 40% 80%, hsl(240 70% 94%) 0px, transparent 50%);
     
-    /* Layered Background System - Light Mode */
-    --bg-mesh-light: radial-gradient(at 15% 25%, hsl(220 85% 95%) 0px, transparent 45%),
-                     radial-gradient(at 85% 20%, hsl(195 90% 96%) 0px, transparent 50%),
-                     radial-gradient(at 50% 85%, hsl(240 70% 97%) 0px, transparent 45%),
-                     radial-gradient(at 25% 75%, hsl(217 80% 94%) 0px, transparent 40%);
-    --accent-blob-1-light: radial-gradient(circle at center, hsl(217 91% 60% / 0.15), transparent 70%);
-    --accent-blob-2-light: radial-gradient(circle at center, hsl(195 100% 60% / 0.12), transparent 70%);
-    
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -124,14 +116,6 @@
                      radial-gradient(at 80% 70%, hsl(279 80% 12%) 0px, transparent 50%),
                      radial-gradient(at 40% 80%, hsl(195 75% 14%) 0px, transparent 50%);
     
-    /* Layered Background System - Dark Mode */
-    --bg-mesh-dark: radial-gradient(at 15% 25%, hsl(217 85% 12%) 0px, transparent 45%),
-                    radial-gradient(at 85% 20%, hsl(195 85% 10%) 0px, transparent 50%),
-                    radial-gradient(at 50% 85%, hsl(279 60% 8%) 0px, transparent 45%),
-                    radial-gradient(at 25% 75%, hsl(240 70% 9%) 0px, transparent 40%);
-    --accent-blob-1-dark: radial-gradient(circle at center, hsl(217 91% 60% / 0.18), transparent 70%);
-    --accent-blob-2-dark: radial-gradient(circle at center, hsl(195 100% 60% / 0.15), transparent 70%);
-    
     /* Neon Glows - Dark Mode */
     --glow-primary: 0 0 20px hsl(217 91% 60% / 0.3);
     --glow-accent: 0 0 20px hsl(195 100% 60% / 0.3);
@@ -153,113 +137,9 @@
   }
   
   body {
-    @apply text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased;
+    background: var(--gradient-secondary);
     min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
-    background: hsl(var(--background));
-    background-image: var(--bg-mesh-light);
-    animation: meshDrift 40s ease-in-out infinite;
-    will-change: transform;
-  }
-
-  .dark body {
-    background-image: var(--bg-mesh-dark);
-  }
-
-  /* Layer 2: Middle Layer - Noise + Vignette + Grid */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    pointer-events: none;
-    background-image: 
-      radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, hsl(var(--background) / 0.8) 100%),
-      repeating-linear-gradient(0deg, transparent, transparent 2px, hsl(var(--foreground) / 0.02) 2px, hsl(var(--foreground) / 0.02) 4px),
-      repeating-linear-gradient(90deg, transparent, transparent 2px, hsl(var(--foreground) / 0.02) 2px, hsl(var(--foreground) / 0.02) 4px);
-    animation: noiseDrift 50s linear infinite;
-    opacity: 0.6;
-  }
-
-  /* Layer 3: Top Layer - Animated Accent Blobs */
-  body::after {
-    content: '';
-    position: fixed;
-    top: -10%;
-    left: -10%;
-    right: -10%;
-    bottom: -10%;
-    z-index: 0;
-    pointer-events: none;
-    background-image: 
-      var(--accent-blob-1-light),
-      var(--accent-blob-2-light);
-    background-size: 60% 60%, 50% 50%;
-    background-position: 20% 30%, 80% 70%;
-    background-repeat: no-repeat;
-    animation: blobFloat1 25s ease-in-out infinite;
-    mix-blend-mode: overlay;
-  }
-
-  .dark body::after {
-    background-image: 
-      var(--accent-blob-1-dark),
-      var(--accent-blob-2-dark);
-    mix-blend-mode: soft-light;
-  }
-
-  /* Ensure all content is above background effects */
-  #root {
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Keyframe Animations for Layered Background */
-  @keyframes meshDrift {
-    0%, 100% { 
-      transform: translate(0, 0) scale(1); 
-    }
-    33% { 
-      transform: translate(-3%, 4%) scale(1.05); 
-    }
-    66% { 
-      transform: translate(4%, -2%) scale(0.98); 
-    }
-  }
-
-  @keyframes noiseDrift {
-    0% { 
-      transform: translate(0, 0) rotate(0deg); 
-    }
-    100% { 
-      transform: translate(100px, 100px) rotate(0.5deg); 
-    }
-  }
-
-  @keyframes blobFloat1 {
-    0%, 100% { 
-      transform: translate(0, 0) scale(1); 
-      opacity: 1;
-    }
-    50% { 
-      transform: translate(30%, -20%) scale(1.2); 
-      opacity: 1;
-    }
-  }
-
-  @keyframes blobFloat2 {
-    0%, 100% { 
-      transform: translate(0, 0) scale(1); 
-      opacity: 1;
-    }
-    50% { 
-      transform: translate(-25%, 30%) scale(1.15); 
-      opacity: 1;
-    }
   }
   
   /* Screen reader only utility */
@@ -293,9 +173,6 @@
       scroll-behavior: auto !important;
     }
     
-    body,
-    body::before,
-    body::after,
     .hero-bg::before,
     .hero-bg::after {
       animation: none !important;
