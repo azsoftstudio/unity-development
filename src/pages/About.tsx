@@ -10,13 +10,13 @@ const ValueCard = memo<{
   animationDelay: `${index * 0.1}s`
 }}>
     {/* Gradient accent on hover */}
-    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     
     <div className="relative z-10">
-      <div className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+      <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center mb-6 text-primary-foreground shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
         {value.icon}
       </div>
-      <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:bg-gradient-primary group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+      <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-all duration-300">
         {value.title}
       </h3>
       <p className="text-muted-foreground leading-relaxed text-base">
@@ -48,7 +48,7 @@ const About = memo(() => {
         {/* Header */}
         <header className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            About <span className="bg-gradient-primary bg-clip-text text-transparent">AZSoftStudio</span>
+            About <span className="text-gradient">AZSoftStudio</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             We're an indie Unity asset studio dedicated to creating high-quality, time-saving tools that make game development more enjoyable and efficient.
@@ -57,10 +57,10 @@ const About = memo(() => {
 
         {/* Mission */}
         <section className="relative glass p-10 rounded-2xl mb-12 animate-slide-in-up border border-border/50 overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-primary opacity-10 blur-3xl rounded-full" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-3xl rounded-full" />
           <div className="relative z-10">
             <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center gap-3">
-              <span className="w-1.5 h-8 bg-gradient-primary rounded-full" />
+              <span className="w-1.5 h-8 bg-primary rounded-full" />
               Our Mission
             </h2>
             <p className="text-muted-foreground leading-relaxed text-lg">
@@ -86,12 +86,12 @@ const About = memo(() => {
           <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/20 blur-3xl rounded-full" />
           <div className="relative z-10">
             <h2 className="text-3xl font-bold text-foreground mb-8 flex items-center gap-3">
-              <span className="w-1.5 h-8 bg-gradient-primary rounded-full" />
+              <span className="w-1.5 h-8 bg-primary rounded-full" />
               Meet the Team
             </h2>
             <div className="space-y-8">
               <div className="p-6 rounded-xl bg-background/50 border border-border/50">
-                <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-3">
+                <h3 className="text-2xl font-bold text-gradient mb-3">
                   Muhammad Arabii Mustafiz
                 </h3>
                 <p className="text-sm text-primary font-semibold mb-3">Founder & Lead Developer</p>
@@ -117,7 +117,7 @@ const About = memo(() => {
         <section className="relative text-center glass p-10 rounded-2xl animate-slide-in-up border border-border/50 overflow-hidden" style={{
         animationDelay: '0.6s'
       }}>
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-gradient-primary opacity-5 blur-3xl rounded-full" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/5 blur-3xl rounded-full" />
           <div className="relative z-10">
             <h2 className="text-3xl font-bold text-foreground mb-6">Join Our Community</h2>
             <p className="text-muted-foreground leading-relaxed mb-6 max-w-2xl mx-auto text-lg">
