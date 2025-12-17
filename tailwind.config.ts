@@ -58,9 +58,8 @@ export default {
 				mono: ['JetBrains Mono', 'Fira Code', 'monospace']
 			},
 			backgroundImage: {
-				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-secondary': 'var(--gradient-secondary)',
-				'gradient-hero': 'var(--gradient-hero)'
+				'gradient-text': 'var(--gradient-text)',
+				'gradient-text-hero': 'var(--gradient-text-hero)'
 			},
 			boxShadow: {
 				'xs': 'var(--shadow-xs)',
