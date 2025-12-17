@@ -42,13 +42,9 @@
   --glass-border: 240 6% 85% / 0.3;
   --glass-shadow: 240 5% 15% / 0.12;
     
-    /* Gradients - Light Mode - Multi-tone stunning gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 85% 64%), hsl(195 92% 67%), hsl(240 70% 75%));
-    --gradient-secondary: linear-gradient(135deg, hsl(240 5% 96%), hsl(217 91% 92%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 85% 92%) 0%, hsl(200 90% 94%) 25%, hsl(240 70% 96%) 50%, hsl(195 85% 94%) 75%, hsl(217 80% 92%) 100%);
-    --gradient-mesh: radial-gradient(at 20% 30%, hsl(217 85% 90%) 0px, transparent 50%), 
-                     radial-gradient(at 80% 70%, hsl(195 85% 92%) 0px, transparent 50%),
-                     radial-gradient(at 40% 80%, hsl(240 70% 94%) 0px, transparent 50%);
+    /* Text Gradients Only - Light Mode */
+    --gradient-text: linear-gradient(135deg, hsl(217 85% 55%), hsl(195 92% 50%), hsl(260 70% 60%));
+    --gradient-text-hero: linear-gradient(135deg, hsl(217 91% 50%), hsl(195 100% 45%), hsl(280 85% 55%));
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -108,13 +104,9 @@
     --glass-border: 240 10% 25% / 0.4;
     --glass-shadow: 0 0% 0% / 0.3;
     
-    /* Gradients - Dark Mode - Multi-tone stunning gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 85% 55%), hsl(279 90% 58%), hsl(195 85% 60%));
-    --gradient-secondary: linear-gradient(135deg, hsl(240 10% 10%), hsl(217 91% 12%));
-    --gradient-hero: linear-gradient(135deg, hsl(240 15% 8%) 0%, hsl(217 70% 12%) 25%, hsl(279 60% 10%) 50%, hsl(195 65% 12%) 75%, hsl(240 15% 8%) 100%);
-    --gradient-mesh: radial-gradient(at 20% 30%, hsl(217 85% 15%) 0px, transparent 50%), 
-                     radial-gradient(at 80% 70%, hsl(279 80% 12%) 0px, transparent 50%),
-                     radial-gradient(at 40% 80%, hsl(195 75% 14%) 0px, transparent 50%);
+    /* Text Gradients Only - Dark Mode */
+    --gradient-text: linear-gradient(135deg, hsl(217 91% 65%), hsl(195 100% 60%), hsl(280 90% 70%));
+    --gradient-text-hero: linear-gradient(135deg, hsl(217 91% 70%), hsl(195 100% 65%), hsl(280 85% 70%));
     
     /* Neon Glows - Dark Mode */
     --glow-primary: 0 0 20px hsl(217 91% 60% / 0.3);
@@ -138,7 +130,6 @@
   
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    background: var(--gradient-secondary);
     min-height: 100vh;
   }
   
@@ -204,9 +195,9 @@
     position: relative;
   }
   
-  /* Hero Gradient Background - Stunning animated multi-layer */
+  /* Hero Background - Clean solid background */
   .hero-bg {
-    background: var(--gradient-hero);
+    @apply bg-background;
     position: relative;
     overflow: hidden;
   }
@@ -215,10 +206,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: var(--gradient-mesh);
-    opacity: 0.6;
-    animation: meshMove 20s ease-in-out infinite;
-    will-change: transform;
+    background: hsl(var(--primary) / 0.03);
   }
   
   .hero-bg::after {
@@ -226,12 +214,10 @@
     position: absolute;
     inset: 0;
     background: 
-      repeating-linear-gradient(0deg, transparent 0px, hsl(var(--foreground) / 0.02) 1px, transparent 2px),
-      repeating-linear-gradient(90deg, transparent 0px, hsl(var(--foreground) / 0.02) 1px, transparent 2px);
+      repeating-linear-gradient(0deg, transparent 0px, hsl(var(--foreground) / 0.015) 1px, transparent 2px),
+      repeating-linear-gradient(90deg, transparent 0px, hsl(var(--foreground) / 0.015) 1px, transparent 2px);
     background-size: 60px 60px;
-    opacity: 0.3;
-    animation: subtleFloat 30s linear infinite;
-    will-change: transform;
+    opacity: 0.4;
   }
   
   /* Liquid Glass Animations */
@@ -619,17 +605,16 @@
     }
   }
   
-  /* Enhanced Typography Utilities */
+  /* Enhanced Typography Utilities - Gradients for text only */
   .text-gradient {
-    background: var(--gradient-primary);
+    background: var(--gradient-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    will-change: background-position;
   }
   
   .text-gradient-hero {
-    background: linear-gradient(135deg, hsl(217 91% 60%), hsl(195 100% 60%), hsl(279 100% 60%));
+    background: var(--gradient-text-hero);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

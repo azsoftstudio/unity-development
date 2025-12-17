@@ -46,7 +46,7 @@ const Home = memo(() => {
               <a href="https://assetstore.unity.com/publishers/102095" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button 
                   size="lg" 
-                  className="btn-professional glass-strong bg-gradient-primary text-primary-foreground border-0 px-8 py-6 text-lg font-semibold group w-full sm:w-auto"
+                  className="btn-professional bg-primary text-primary-foreground border-0 px-8 py-6 text-lg font-semibold group w-full sm:w-auto hover:bg-primary/90"
                 >
                   Explore Assets
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -66,14 +66,14 @@ const Home = memo(() => {
           </div>
         </div>
 
-        {/* Optimized Floating Elements - reduced for performance */}
-        <div className="absolute top-20 left-10 w-16 h-16 glass rounded-full animate-float opacity-30" />
-        <div className="absolute bottom-32 right-20 w-12 h-12 glass rounded-full animate-subtle-pulse opacity-25" style={{ animationDelay: '2s' }} />
+        {/* Decorative Elements */}
+        <div className="absolute top-20 left-10 w-16 h-16 bg-primary/10 rounded-full opacity-40" />
+        <div className="absolute bottom-32 right-20 w-12 h-12 bg-accent/10 rounded-full opacity-30" />
         
-        {/* Optimized Background Orbs */}
+        {/* Background Accent */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-gradient-primary rounded-full blur-3xl opacity-5 animate-subtle-pulse" />
-          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-primary rounded-full blur-3xl opacity-3 animate-subtle-pulse" style={{ animationDelay: '3s' }} />
+          <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
         </div>
       </section>
 
@@ -116,7 +116,7 @@ const Home = memo(() => {
             <a href="https://assetstore.unity.com/publishers/102095" target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
-                className="btn-professional glass-strong bg-gradient-primary text-primary-foreground border-0 px-8 py-6 text-lg font-semibold group"
+                className="btn-professional bg-primary text-primary-foreground border-0 px-8 py-6 text-lg font-semibold group hover:bg-primary/90"
               >
                 Browse Asset Store
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
