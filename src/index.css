@@ -186,8 +186,8 @@
   .glass-strong {
     background: hsl(var(--glass-bg));
     border: 1px solid hsl(var(--glass-border));
-    backdrop-filter: blur(10px) saturate(105%);
-    -webkit-backdrop-filter: blur(10px) saturate(105%);
+    backdrop-filter: blur(5px) saturate(105%);
+    -webkit-backdrop-filter: blur(5px) saturate(105%);
     box-shadow: 
       0 4px 12px hsl(var(--glass-shadow)),
       0 12px 32px hsl(var(--glass-shadow)),
