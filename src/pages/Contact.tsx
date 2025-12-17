@@ -12,7 +12,7 @@ const ContactMethodCard = memo<{ method: any; index: number }>(({ method, index 
       className="glass p-8 rounded-xl transition-smooth interactive-glow animate-slide-in-up"
       style={{ animationDelay: `${index * 0.2}s` }}
     >
-      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 text-white">
+      <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 text-primary-foreground">
         {method.icon}
       </div>
       <h3 className="text-xl font-semibold text-foreground mb-3">
@@ -46,7 +46,7 @@ const SocialLinkCard = memo<{ social: any }>(({ social }) => {
       className="glass border-primary/30 text-foreground hover:bg-primary/10 transition-smooth p-6 h-auto flex-col gap-3"
       onClick={handleClick}
     >
-      <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center text-white">
+      <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-primary-foreground">
         {social.icon}
       </div>
       <div className="text-center">
@@ -106,7 +106,7 @@ const Contact = memo(() => {
         {/* Header */}
         <header className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Get in <span className="bg-gradient-primary bg-clip-text text-transparent">Touch</span>
+            Get in <span className="text-gradient">Touch</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             We'd love to hear from you! Whether you need support, have feedback, or just want to say hello, 
