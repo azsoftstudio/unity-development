@@ -33,9 +33,7 @@ const Home = memo(() => {
             <Logo size="xl" shape="rounded" showText={false} variant="hero" className="mb-8" />
             <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
               <span className="text-foreground">AZSoft</span>
-              <span className="text-gradient-hero">
-                Studio
-              </span>
+              <span className="text-cyan-shine">Studio</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed tracking-wide font-light animate-fade-in" style={{ animationDelay: '0.3s' }}>
