@@ -71,55 +71,57 @@
 
   .dark {
     /* Dark Mode - Premium & Tech */
-    --background: 240 10% 8%;
-    --foreground: 240 10% 95%;
+    --background: 222 20% 7%;
+    --foreground: 210 20% 92%;
     
-    --card: 240 10% 10%;
-    --card-foreground: 240 10% 95%;
+    --card: 222 18% 10%;
+    --card-foreground: 210 20% 92%;
     
-    --popover: 240 10% 10%;
-    --popover-foreground: 240 10% 95%;
+    --popover: 222 18% 10%;
+    --popover-foreground: 210 20% 92%;
     
-    --primary: 217 91% 60%;
-    --primary-foreground: 240 10% 8%;
+    --primary: 210 100% 55%;
+    --primary-foreground: 222 20% 7%;
     
-    --secondary: 240 10% 12%;
-    --secondary-foreground: 240 10% 95%;
+    --secondary: 222 15% 14%;
+    --secondary-foreground: 210 20% 92%;
     
-    --muted: 240 10% 15%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 222 15% 18%;
+    --muted-foreground: 210 10% 55%;
     
-    --accent: 195 100% 60%;
-    --accent-foreground: 240 10% 8%;
+    --accent: 185 80% 50%;
+    --accent-foreground: 222 20% 7%;
     
-    --destructive: 0 84% 60%;
+    --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 240 10% 18%;
-    --input: 240 10% 18%;
-    --ring: 217 91% 60%;
+    --border: 222 15% 20%;
+    --input: 222 15% 20%;
+    --ring: 210 100% 55%;
     
     /* Glassmorphism Variables - Dark Mode */
-    --glass-bg: 240 10% 8% / 0.2;
-    --glass-border: 240 10% 25% / 0.4;
-    --glass-shadow: 0 0% 0% / 0.3;
+    --glass-bg: 222 20% 10% / 0.6;
+    --glass-border: 210 20% 30% / 0.3;
+    --glass-shadow: 222 30% 5% / 0.5;
     
-    /* Text Gradients Only - Dark Mode */
-    --gradient-text: linear-gradient(135deg, hsl(217 91% 65%), hsl(195 100% 60%), hsl(280 90% 70%));
-    --gradient-text-hero: linear-gradient(135deg, hsl(217 91% 70%), hsl(195 100% 65%), hsl(280 85% 70%));
+    /* Text Gradients Only - Dark Mode - Blue to Cyan */
+    --gradient-text: linear-gradient(135deg, hsl(210 100% 60%), hsl(185 85% 55%));
+    --gradient-text-hero: linear-gradient(135deg, hsl(210 100% 65%), hsl(185 90% 60%));
+    
+    /* Cyan Glow for Studio text */
+    --cyan-glow: 185 80% 50%;
     
     /* Neon Glows - Dark Mode */
-    --glow-primary: 0 0 20px hsl(217 91% 60% / 0.3);
-    --glow-accent: 0 0 20px hsl(195 100% 60% / 0.3);
-    --glow-purple: 0 0 20px hsl(279 100% 60% / 0.3);
+    --glow-primary: 0 0 20px hsl(210 100% 55% / 0.4);
+    --glow-accent: 0 0 25px hsl(185 80% 50% / 0.5);
     
-    /* Dark Mode Shadows - adjusted for visibility */
-    --shadow-primary: 0 10px 30px -10px hsl(217 91% 60% / 0.6);
-    --shadow-accent: 0 10px 30px -10px hsl(195 100% 60% / 0.5);
+    /* Dark Mode Shadows */
+    --shadow-primary: 0 10px 30px -10px hsl(210 100% 55% / 0.5);
+    --shadow-accent: 0 10px 30px -10px hsl(185 80% 50% / 0.4);
     
     /* Dark Mode Highlights */
-    --highlight-top: inset 0 1px 0 hsl(240 10% 100% / 0.1);
-    --highlight-subtle: inset 0 1px 0 hsl(240 10% 100% / 0.05);
+    --highlight-top: inset 0 1px 0 hsl(210 30% 100% / 0.08);
+    --highlight-subtle: inset 0 1px 0 hsl(210 30% 100% / 0.04);
   }
 }
 
@@ -671,6 +673,23 @@
   
   .text-shadow-glow {
     text-shadow: 0 0 20px hsl(var(--primary) / 0.5), 0 0 40px hsl(var(--primary) / 0.3);
+  }
+  
+  /* Cyan Shine Effect for Studio text */
+  .text-cyan-shine {
+    color: hsl(185 85% 55%);
+    text-shadow: 
+      0 0 10px hsl(185 85% 55% / 0.6),
+      0 0 20px hsl(185 85% 55% / 0.4),
+      0 0 30px hsl(185 85% 55% / 0.2);
+  }
+  
+  .dark .text-cyan-shine {
+    color: hsl(185 90% 60%);
+    text-shadow: 
+      0 0 15px hsl(185 90% 60% / 0.7),
+      0 0 30px hsl(185 90% 60% / 0.5),
+      0 0 45px hsl(185 90% 60% / 0.3);
   }
   
   /* Letter Spacing Utilities */
