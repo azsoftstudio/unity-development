@@ -682,6 +682,7 @@
       0 0 10px hsl(185 85% 55% / 0.6),
       0 0 20px hsl(185 85% 55% / 0.4),
       0 0 30px hsl(185 85% 55% / 0.2);
+    animation: cyanPulse 3s ease-in-out infinite;
   }
   
   .dark .text-cyan-shine {
@@ -690,6 +691,37 @@
       0 0 15px hsl(185 90% 60% / 0.7),
       0 0 30px hsl(185 90% 60% / 0.5),
       0 0 45px hsl(185 90% 60% / 0.3);
+    animation: cyanPulseDark 3s ease-in-out infinite;
+  }
+  
+  @keyframes cyanPulse {
+    0%, 100% {
+      text-shadow: 
+        0 0 10px hsl(185 85% 55% / 0.6),
+        0 0 20px hsl(185 85% 55% / 0.4),
+        0 0 30px hsl(185 85% 55% / 0.2);
+    }
+    50% {
+      text-shadow: 
+        0 0 15px hsl(185 85% 55% / 0.8),
+        0 0 30px hsl(185 85% 55% / 0.5),
+        0 0 45px hsl(185 85% 55% / 0.3);
+    }
+  }
+  
+  @keyframes cyanPulseDark {
+    0%, 100% {
+      text-shadow: 
+        0 0 15px hsl(185 90% 60% / 0.7),
+        0 0 30px hsl(185 90% 60% / 0.5),
+        0 0 45px hsl(185 90% 60% / 0.3);
+    }
+    50% {
+      text-shadow: 
+        0 0 20px hsl(185 90% 60% / 0.9),
+        0 0 40px hsl(185 90% 60% / 0.6),
+        0 0 60px hsl(185 90% 60% / 0.4);
+    }
   }
   
   /* Letter Spacing Utilities */
