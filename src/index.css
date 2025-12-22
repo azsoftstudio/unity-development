@@ -680,57 +680,61 @@
     font-weight: 700;
     position: relative;
     display: inline-block;
+    color: hsl(185 75% 42%);
+    text-shadow: 0 0 12px hsl(185 75% 50% / 0.12);
+  }
+  
+  .text-cyan-shine::after {
+    content: "Studio";
+    position: absolute;
+    left: 0;
+    top: 0;
     background: linear-gradient(
-      110deg,
-      hsl(185 85% 50%) 0%,
-      hsl(185 85% 50%) 35%,
-      hsl(185 100% 75%) 42%,
-      hsl(185 100% 92%) 50%,
-      hsl(185 100% 75%) 58%,
-      hsl(185 85% 50%) 65%,
-      hsl(185 85% 50%) 100%
+      100deg,
+      transparent 0%,
+      transparent 42%,
+      hsl(185 100% 80% / 0.7) 47%,
+      hsl(0 0% 100% / 0.85) 50%,
+      hsl(185 100% 80% / 0.7) 53%,
+      transparent 58%,
+      transparent 100%
     );
-    background-size: 300% 100%;
+    background-size: 220% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: none;
-    filter: 
-      drop-shadow(0 1px 0 hsl(185 85% 35% / 0.5))
-      drop-shadow(0 -1px 0 hsl(185 100% 85% / 0.3));
-    animation: shineBevel 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    animation: shinePass 4.5s ease-in-out infinite;
+    animation-delay: 0.5s;
   }
   
   .dark .text-cyan-shine {
+    color: hsl(185 80% 52%);
+    text-shadow: 0 0 16px hsl(185 80% 55% / 0.18);
+  }
+  
+  .dark .text-cyan-shine::after {
     background: linear-gradient(
-      110deg,
-      hsl(185 90% 55%) 0%,
-      hsl(185 90% 55%) 35%,
-      hsl(185 100% 80%) 42%,
-      hsl(185 100% 95%) 50%,
-      hsl(185 100% 80%) 58%,
-      hsl(185 90% 55%) 65%,
-      hsl(185 90% 55%) 100%
+      100deg,
+      transparent 0%,
+      transparent 42%,
+      hsl(185 100% 85% / 0.75) 47%,
+      hsl(0 0% 100% / 0.95) 50%,
+      hsl(185 100% 85% / 0.75) 53%,
+      transparent 58%,
+      transparent 100%
     );
-    background-size: 300% 100%;
+    background-size: 220% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: 
-      drop-shadow(0 1px 0 hsl(185 90% 30% / 0.6))
-      drop-shadow(0 -1px 0 hsl(185 100% 90% / 0.4))
-      drop-shadow(0 0 8px hsl(185 90% 60% / 0.15));
   }
   
-  @keyframes shineBevel {
-    0%, 10% {
-      background-position: 200% 50%;
+  @keyframes shinePass {
+    0%, 12% {
+      background-position: 130% 50%;
     }
-    45%, 55% {
-      background-position: -100% 50%;
-    }
-    100% {
-      background-position: -100% 50%;
+    88%, 100% {
+      background-position: -30% 50%;
     }
   }
   
