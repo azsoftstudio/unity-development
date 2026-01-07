@@ -1,7 +1,6 @@
 import { useState, useEffect, memo, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { ThemeToggle } from './ThemeToggle';
 import { Logo } from './Logo';
 import { Button } from '@/components/ui/button';
 import { useScrolled } from '@/hooks/useScrolled';
@@ -104,9 +103,6 @@ export const Navigation = memo(() => {
                 isActive={location.pathname === item.path}
               />
             ))}
-            <div className="ml-4 pl-4 border-l border-border/30">
-              <ThemeToggle />
-            </div>
           </div>
 
           {/* Tablet Navigation */}
@@ -115,15 +111,13 @@ export const Navigation = memo(() => {
               <NavigationItem
                 key={item.name}
                 item={item}
-                isActive={location.pathname === item.path}
+              isActive={location.pathname === item.path}
               />
             ))}
-            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-4">
-            <ThemeToggle />
             <Button
               variant="ghost"
               size="sm"
