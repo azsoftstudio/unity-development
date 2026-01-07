@@ -21,7 +21,7 @@ const NotFound = memo(() => {
     <div className="min-h-screen flex items-center justify-center px-6">
       <div className="text-center max-w-md mx-auto">
         <div className="glass-strong p-8 rounded-xl animate-fade-in">
-          <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+          <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 text-primary-foreground text-2xl font-bold">
             404
           </div>
           
