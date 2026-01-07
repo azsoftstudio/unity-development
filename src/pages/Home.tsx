@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/Logo';
 import { memo, useMemo } from 'react';
 import { OptimizedFeatureCard } from '@/components/OptimizedFeatureCard';
+import { InteractiveHeroBackground } from '@/components/InteractiveHeroBackground';
 
 const Home = memo(() => {
   const features = useMemo(() => [
@@ -27,7 +28,9 @@ const Home = memo(() => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <InteractiveHeroBackground />
+        
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <div className="animate-fade-in flex flex-col items-center">
             <Logo size="xl" shape="rounded" showText={false} variant="hero" className="mb-8" />
@@ -62,16 +65,6 @@ const Home = memo(() => {
               </Link>
             </div>
           </div>
-        </div>
-
-        {/* Decorative Elements */}
-        <div className="absolute top-20 left-10 w-16 h-16 bg-primary/10 rounded-full opacity-40" />
-        <div className="absolute bottom-32 right-20 w-12 h-12 bg-accent/10 rounded-full opacity-30" />
-        
-        {/* Background Accent */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
         </div>
       </section>
 
