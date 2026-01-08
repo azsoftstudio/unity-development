@@ -95,11 +95,7 @@ const About = memo(() => {
                   Muhammad Arabii Mustafiz
                 </h3>
                 <p className="text-sm text-primary font-semibold mb-3">Founder & Lead Developer</p>
-                <p className="text-muted-foreground leading-relaxed">
-                  AZSoftStudio was founded by Muhammad, a passionate Unity developer with experience shipping commercial games and tools. 
-                  After countless hours spent on repetitive tasks and wrestling with Unity's quirks, the vision became clear: 
-                  create the tools that every Unity developer wishes existed.
-                </p>
+                <p className="text-muted-foreground leading-relaxed">AZSoftStudio was founded by Arabii, a passionate Unity developer with experience shipping commercial games and tools. After countless hours spent on repetitive tasks and wrestling with Unity's quirks, the vision became clear: create the tools that every Unity developer wishes existed.</p>
               </div>
               <div className="p-6 rounded-xl bg-background/30 border border-border/30">
                 <h3 className="text-xl font-semibold text-foreground mb-3">Our Approach</h3>
