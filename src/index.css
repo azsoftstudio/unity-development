@@ -401,4 +401,92 @@
     animation: shinePass 4.5s ease-in-out infinite;
     animation-delay: 0.5s;
   }
+
+  /* Scroll Reveal Animations */
+  .scroll-reveal-hidden {
+    opacity: 0;
+  }
+
+  .scroll-reveal-visible {
+    animation-fill-mode: forwards;
+    animation-duration: 0.6s;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  @keyframes revealUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes revealLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes revealRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes revealScale {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes revealSlideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .scroll-reveal-fade-up { animation-name: revealUp; }
+  .scroll-reveal-fade-left { animation-name: revealLeft; }
+  .scroll-reveal-fade-right { animation-name: revealRight; }
+  .scroll-reveal-scale { animation-name: revealScale; }
+  .scroll-reveal-slide-up { animation-name: revealSlideUp; }
+
+  /* Divider Animations */
+  @keyframes glowPass {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(400%); }
+  }
+
+  @keyframes dotPulse {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.3); }
+  }
+
+  @keyframes waveFlow {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes geometricPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  .divider-glow-pass {
+    animation: glowPass 3s ease-in-out infinite;
+  }
+
+  .divider-dot {
+    animation: dotPulse 2s ease-in-out infinite;
+  }
+
+  .divider-wave {
+    animation: waveFlow 8s linear infinite;
+  }
+
+  .divider-geometric {
+    animation: geometricPulse 3s ease-in-out infinite;
+  }
+
+  /* Icon hover animations */
+  .icon-slide-right {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .group:hover .icon-slide-right {
+    transform: translateX(4px);
+  }
 }
