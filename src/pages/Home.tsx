@@ -5,6 +5,8 @@ import { Logo } from '@/components/Logo';
 import { memo, useMemo } from 'react';
 import { OptimizedFeatureCard } from '@/components/OptimizedFeatureCard';
 import { InteractiveHeroBackground } from '@/components/InteractiveHeroBackground';
+import { ScrollReveal } from '@/components/ScrollReveal';
+import { AnimatedDivider } from '@/components/AnimatedDivider';
 
 const Home = memo(() => {
   const features = useMemo(() => [
@@ -50,7 +52,7 @@ const Home = memo(() => {
                   className="btn-professional bg-primary text-primary-foreground border-0 px-8 py-6 text-lg font-semibold group w-full sm:w-auto hover:bg-primary/90"
                 >
                   Explore Assets
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-5 w-5 icon-slide-right" />
                 </Button>
               </a>
               
@@ -68,52 +70,61 @@ const Home = memo(() => {
         </div>
       </section>
 
+      <AnimatedDivider variant="glow-line" />
+
       {/* Features Section */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <header className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
-              Why Choose <span className="text-gradient">AZSoftStudio</span>?
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-normal tracking-wide">
-              We understand the challenges of Unity development and build solutions that actually make your life easier.
-            </p>
-          </header>
+          <ScrollReveal animation="fade-up">
+            <header className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
+                Why Choose <span className="text-gradient">AZSoftStudio</span>?
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-normal tracking-wide">
+                We understand the challenges of Unity development and build solutions that actually make your life easier.
+              </p>
+            </header>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <OptimizedFeatureCard
-                key={feature.title}
-                icon={feature.icon}
-                title={feature.title}
-                description={feature.description}
-                index={index}
-              />
+              <ScrollReveal key={feature.title} animation="fade-up" index={index}>
+                <OptimizedFeatureCard
+                  icon={feature.icon}
+                  title={feature.title}
+                  description={feature.description}
+                  index={0}
+                />
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
+      <AnimatedDivider variant="dots" />
+
       {/* CTA Section */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="glass-strong p-12 rounded-2xl animate-gentle-slide-in transition-smooth shadow-depth-3 hover:shadow-depth-4 group">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
-              Ready to Accelerate Your <span className="text-gradient">Development</span>?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto font-light tracking-wide">
-              Join thousands of Unity developers who trust AZSoftStudio tools to ship better games faster.
-            </p>
-            <a href="https://assetstore.unity.com/publishers/102095" target="_blank" rel="noopener noreferrer">
-              <Button 
-                size="lg" 
-                className="btn-professional bg-primary text-primary-foreground border-0 px-8 py-6 text-lg font-semibold group hover:bg-primary/90"
-              >
-                Browse Asset Store
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </a>
-          </div>
+          <ScrollReveal animation="scale">
+            <div className="glass-strong p-12 rounded-2xl transition-smooth shadow-depth-3 hover:shadow-depth-4 group">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
+                Ready to Accelerate Your <span className="text-gradient">Development</span>?
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto font-light tracking-wide">
+                Join thousands of Unity developers who trust AZSoftStudio tools to ship better games faster.
+              </p>
+              <a href="https://assetstore.unity.com/publishers/102095" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  size="lg" 
+                  className="btn-professional bg-primary text-primary-foreground border-0 px-8 py-6 text-lg font-semibold group hover:bg-primary/90"
+                >
+                  Browse Asset Store
+                  <ArrowRight className="ml-2 h-5 w-5 icon-slide-right" />
+                </Button>
+              </a>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>
