@@ -89,10 +89,10 @@ export const Navigation = memo(() => {
         isScrolled ? 'glass-strong' : 'glass'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Logo size="md" shape="rounded" showText={true} />
+          {/* Logo - hide text on very small screens */}
+          <Logo size="md" shape="rounded" showText={true} className="[&>span]:hidden xs:[&>span]:inline" />
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-10">

@@ -7,18 +7,18 @@ const ValueCard = memo<{
   value: any;
   index: number;
 }>(({ value, index }) => (
-  <div className="group relative glass p-8 rounded-2xl transition-smooth interactive-glow border border-border/50 hover:border-primary/30 overflow-hidden">
+  <div className="group relative glass p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl transition-smooth interactive-glow border border-border/50 hover:border-primary/30 overflow-hidden h-full">
     {/* Gradient accent on hover */}
     <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     
     <div className="relative z-10">
-      <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center mb-6 text-primary-foreground shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+      <div className="w-11 h-11 sm:w-12 md:w-14 sm:h-12 md:h-14 bg-primary rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6 text-primary-foreground shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
         {value.icon}
       </div>
-      <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-all duration-300">
+      <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4 group-hover:text-primary transition-all duration-300">
         {value.title}
       </h3>
-      <p className="text-muted-foreground leading-relaxed text-base">
+      <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
         {value.description}
       </p>
     </div>
@@ -51,15 +51,15 @@ const About = memo(() => {
   ], []);
 
   return (
-    <div className="min-h-screen pt-24 px-6">
+    <div className="min-h-screen pt-20 sm:pt-24 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <ScrollReveal animation="fade-up">
-          <header className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <header className="text-center mb-10 sm:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
               About <span className="text-gradient">AZSoftStudio</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
               We're an indie Unity asset studio dedicated to creating high-quality, time-saving tools that make game development more enjoyable and efficient.
             </p>
           </header>
@@ -67,14 +67,14 @@ const About = memo(() => {
 
         {/* Mission */}
         <ScrollReveal animation="fade-up" delay={0.1}>
-          <section className="relative glass p-10 rounded-2xl mb-12 border border-border/50 overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-3xl rounded-full" />
+          <section className="relative glass p-6 sm:p-8 md:p-10 rounded-xl sm:rounded-2xl mb-8 sm:mb-12 border border-border/50 overflow-hidden">
+            <div className="absolute top-0 right-0 w-48 sm:w-64 h-48 sm:h-64 bg-primary/10 blur-3xl rounded-full" />
             <div className="relative z-10">
-              <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center gap-3">
-                <span className="w-1.5 h-8 bg-primary rounded-full" />
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                <span className="w-1 sm:w-1.5 h-6 sm:h-8 bg-primary rounded-full" />
                 Our Mission
               </h2>
-              <p className="text-muted-foreground leading-relaxed text-lg">
+              <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
                 Unity development shouldn't be about fighting with tools—it should be about bringing your creative vision to life. 
                 That's why we create assets that feel like natural extensions of Unity itself, tools that work the way you think, 
                 and solutions that save you hours of tedious work so you can focus on what really matters: making great games.
@@ -86,11 +86,11 @@ const About = memo(() => {
         <AnimatedDivider variant="geometric" />
 
         {/* Values */}
-        <section className="mb-16">
+        <section className="mb-10 sm:mb-16">
           <ScrollReveal animation="fade-up">
-            <h2 className="text-3xl font-bold text-foreground text-center mb-12">What Drives Us</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-8 sm:mb-12">What Drives Us</h2>
           </ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
             {values.map((value, index) => (
               <ScrollReveal key={value.title} animation="fade-up" index={index}>
                 <ValueCard value={value} index={index} />
@@ -103,26 +103,26 @@ const About = memo(() => {
 
         {/* Founder Section */}
         <ScrollReveal animation="fade-up">
-          <section className="relative glass-strong p-10 rounded-2xl mb-12 border border-primary/20 overflow-hidden">
-            <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/20 blur-3xl rounded-full" />
+          <section className="relative glass-strong p-6 sm:p-8 md:p-10 rounded-xl sm:rounded-2xl mb-8 sm:mb-12 border border-primary/20 overflow-hidden">
+            <div className="absolute bottom-0 left-0 w-48 sm:w-72 h-48 sm:h-72 bg-accent/20 blur-3xl rounded-full" />
             <div className="relative z-10">
-              <h2 className="text-3xl font-bold text-foreground mb-8 flex items-center gap-3">
-                <span className="w-1.5 h-8 bg-primary rounded-full" />
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
+                <span className="w-1 sm:w-1.5 h-6 sm:h-8 bg-primary rounded-full" />
                 Meet the Team
               </h2>
-              <div className="space-y-8">
-                <div className="p-6 rounded-xl bg-background/50 border border-border/50">
-                  <h3 className="text-2xl font-bold text-gradient mb-3">
+              <div className="space-y-4 sm:space-y-6 md:space-y-8">
+                <div className="p-4 sm:p-6 rounded-lg sm:rounded-xl bg-background/50 border border-border/50">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-2 sm:mb-3">
                     Muhammad Arabii Mustafiz
                   </h3>
-                  <p className="text-sm text-primary font-semibold mb-3">Founder & Lead Developer</p>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-xs sm:text-sm text-primary font-semibold mb-2 sm:mb-3">Founder & Lead Developer</p>
+                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                     AZSoftStudio was founded by Arabii, a passionate Unity developer with experience shipping commercial games and tools. After countless hours spent on repetitive tasks and wrestling with Unity's quirks, the vision became clear: create the tools that every Unity developer wishes existed.
                   </p>
                 </div>
-                <div className="p-6 rounded-xl bg-background/30 border border-border/30">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">Our Approach</h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                <div className="p-4 sm:p-6 rounded-lg sm:rounded-xl bg-background/30 border border-border/30">
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2 sm:mb-3">Our Approach</h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                     Every tool we create starts with a real problem we've encountered in our own development work. 
                     We prototype, iterate, and test extensively before releasing anything to the community. 
                     This ensures that every asset we publish is something we'd actually want to use ourselves.
@@ -137,15 +137,15 @@ const About = memo(() => {
 
         {/* Community */}
         <ScrollReveal animation="scale">
-          <section className="relative text-center glass p-10 rounded-2xl border border-border/50 overflow-hidden">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/5 blur-3xl rounded-full" />
+          <section className="relative text-center glass p-6 sm:p-8 md:p-10 rounded-xl sm:rounded-2xl border border-border/50 overflow-hidden">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 sm:w-96 h-64 sm:h-96 bg-primary/5 blur-3xl rounded-full" />
             <div className="relative z-10">
-              <h2 className="text-3xl font-bold text-foreground mb-6">Join Our Community</h2>
-              <p className="text-muted-foreground leading-relaxed mb-6 max-w-2xl mx-auto text-lg">
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">Join Our Community</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4 sm:mb-6 max-w-2xl mx-auto text-base sm:text-lg">
                 We believe the best tools are built in collaboration with the community. Your feedback, 
                 feature requests, and bug reports help us make our assets better for everyone.
               </p>
-              <p className="text-sm text-muted-foreground/80">
+              <p className="text-xs sm:text-sm text-muted-foreground/80">
                 Have an idea for a tool you'd love to see? We'd love to hear from you.
               </p>
             </div>
